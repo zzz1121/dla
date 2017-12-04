@@ -1,0 +1,90 @@
+{include file="common/header" /}
+    {volist name="user_rate" id="vo"}
+        {eq name="$pay_id" value="$vo.pay_id"}
+          <p>取现成本：<span style="color:red;">{$vo.settle_rate*10000/100}%</span></p>
+          <p>取现费率设定必须大于 <span style="color:red;">{$vo.settle*10000/100}%</span></p>
+          <p>服务费成本为：<span style="color:red;">{$vo.extra_rate/100}元</span></p>
+
+        {/eq}
+    {/volist}
+
+    <form class="layui-form layui-form-pane" action="{:url('update')}" method="post" id="editForm">
+      <div class="layui-form-item">
+        <label class="layui-form-label">支付通道选择</label>
+        <div class="layui-input-inline ">
+          <select name="id" class="field-type" type="select" data-href="{:url('')}" lay-filter="SelectType">
+              {volist name="user_rate" id="vo"}
+                <option value="{$vo.pay_id}" {eq name="$Think.get.id" value="$vo.pay_id"}selected="selected"{/eq}>{$vo.pay_name}</option>
+
+              {/volist}
+          </select>
+        </div>
+      </div>
+
+      {volist name="rate" id="vo"}
+        {switch name="$vo.user_lv" }
+        {case value="2" }
+          <p>通道：{$vo.pay_name}</p>
+          <input type="hidden" class="layui-input field-title" name="user_lv[]"
+                 value="{$vo.user_lv*100/100}" lay-verify="required" autocomplete="off" placeholder="">
+          <div class="layui-form-item">
+            <label class="layui-form-label">直属费率，单位：%</label>
+            <div class="layui-input-inline w300">
+              <input type="number" class="layui-input field-title" name="settle_rate[]"
+                     value="{$vo.settle_rate*10000/100}" lay-verify="required" autocomplete="off" placeholder="">
+            </div>
+            <div class="layui-form-mid layui-word-aux">直属用户费率，单位：%<br/>“0.3%” 代表费率千分之3</div>
+          </div>
+
+        {/case}
+        {case value="3"}
+          <p>通道：{$vo.pay_name}</p>
+          <input type="hidden" class="layui-input field-title" name="user_lv[]"
+                 value="{$vo.user_lv*100/100}" lay-verify="required" autocomplete="off" placeholder="">
+          <div class="layui-form-item">
+            <label class="layui-form-label">终端提现费率</label>
+            <div class="layui-input-inline w300">
+              <input type="number" class="layui-input field-title" name="settle_rate[]"
+                     value="{$vo.settle_rate*10000/100}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+            </div>
+            <div class="layui-form-mid layui-word-aux">终端提现费率，单位：%<br/>"0.3%” 代表费率千分之3,不可输入整数</div>
+          </div>
+        {/case}
+        {/switch}
+      {/volist}
+      <div class="layui-form-item">
+        <label class="layui-form-label">直属返利</label>
+        <div class="layui-input-inline w300">
+          <input type="number" class="layui-input field-title" name="parent"
+                 value="{$vo.parent*10000/100}" lay-verify="required" autocomplete="off" placeholder="">
+        </div>
+        <div class="layui-form-mid layui-word-aux">直属返利<br/>"0.3%” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">间接返利，单位：%</label>
+        <div class="layui-input-inline w300">
+          <input type="number" class="layui-input field-title" name="superior"
+                 value="{$vo.superior*10000/100}" lay-verify="required" autocomplete="off" placeholder="">
+        </div>
+        <div class="layui-form-mid layui-word-aux">间接返利，单位：%<br/>"0.3%” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">取现服务费</label>
+        <div class="layui-input-inline w300">
+          <input type="number" class="layui-input field-title" name="extra_rate"
+                 value="{$vo.extra_rate/100}" lay-verify="required" autocomplete="off" placeholder="">
+        </div>
+        <div class="layui-form-mid layui-word-aux">取现服务费<br/>单位：元</div>
+      </div>
+
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+        </div>
+      </div>
+
+    </form>
+
+
+{include file="common/footer" /}
+<!--<script src="__ADMIN_JS__/js/footer.js"></script>-->

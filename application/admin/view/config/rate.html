@@ -1,0 +1,71 @@
+{include file="common/header" /}
+    <form class="layui-form layui-form-pane" action="{:url('charge/update')}" method="post" id="editForm">
+      <div class="layui-form-item">
+        <label class="layui-form-label">提现模式</label>
+        <div class="layui-input-inline ">
+          <select name="id" class="field-type" type="select" data-href="{:url('')}" lay-filter="SelectType">
+            <option value="1" {eq name="$Think.get.id" value="1"}selected="selected"{/eq}>D+0</option>
+            <option value="2" {eq name="$Think.get.id" value="2"}selected="selected"{/eq}>T+1</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">平台成本</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="costing"
+                 value="{$rate_data['costing']}" lay-verify="required" autocomplete="off" placeholder="">
+        </div>
+        <div class="layui-form-mid layui-word-aux">平台的运营成本<br/>“0.003” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">平台费率</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="settle_rate"
+                 value="{$rate_data['settle_rate']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">平台提现费率<br/>"0.003” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">最低手续费</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="min_charge"
+                 value="{$rate_data['min_charge']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">订单手续费不足最低手续费的,将已最低手续费收取。单位:分</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">代理抽成</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="parent"
+                 value="{$rate_data['parent']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">“0.003” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">间接抽成</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="superior"
+                 value="{$rate_data['superior']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">间接代理订单抽成<br/>“0.003” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">服务费</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="extra_rate"
+                 value="{$rate_data['extra_rate']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">订单所需服务费用<br/>输入小数为订单百分比收费,输入整数位按固定值收取,单位:分</div>
+      </div>
+
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <!--<input type="hidden" class="field-id" name="id" value="{$rate_data['id']}">-->
+          <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+          <!--<a href="{:url('charge/update')}" class="layui-btn layui-btn-primary ml10"><i class="aicon ai-fanhui"></i>返回</a>-->
+        </div>
+      </div>
+    </form>
+
+{include file="common/footer" /}
+<!--<script src="__ADMIN_JS__/js/footer.js"></script>-->

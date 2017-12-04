@@ -1,0 +1,72 @@
+{include file="common/header" /}
+
+
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <div class="page-toolbar">
+      <div class="layui-btn-group fl">
+        <a href="{:url('add')}" class="layui-btn layui-btn-primary"><i class="aicon ai-tianjia"></i>添加</a>
+        <!--<a data-href="{:url('status?table=user&status=1')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-qiyong"></i>启用</a>
+        <a data-href="{:url('status?table=user&status=0')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-jinyong1"></i>禁用</a>
+        -->
+		<a data-href="{:url('delete')}" class="layui-btn layui-btn-primary j-page-btns confirm"><i class="aicon ai-jinyong"></i>删除</a>
+      </div>
+    </div>
+    <form id="pageListForm">
+      <div class="layui-form">
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+          <colgroup>
+            <col width="50">
+          </colgroup>
+          <thead>
+          <tr>
+            <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></th>
+            <th>等级名称</th>
+            <th>等级简介</th>
+            <!--<th>取现费率</th>-->
+            <th>升级条件</th>
+            <th>升级统计周期</th>
+            <th>更新时间</th>
+            <th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+          {volist name="lists" id="vo"}
+            <tr>
+              <td><input type="checkbox" name="ids[]" value="{$vo.role_id}" class="layui-checkbox checkbox-ids" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+              <td>{$vo.role_name}</td>
+              <td>{$vo.role_text}</td>
+              <!--<td>{$vo.settle_rate}</td>-->
+              <!--<td>0</td>-->
+              <td>
+                {switch name="$vo.upgrade_type" }
+                {case value="1" break="0或1"}单日流水金额:{$vo.integral}元&&推广人数:{$vo.referrer_count}人{/case}
+                {case value="2" break="0或1"}单日流水金额:{$vo.integral}元{/case}
+                {case value="3" break="0或1"}推广人数:{$vo.referrer_count}人{/case}
+                {/switch}
+              </td>
+              <td>{$vo.period}</td>
+              <td>{:date('Y-m-d H:i:s', $vo['role_time'])}</td>
+
+              <td>
+                <div class="layui-btn-group">
+                  <div class="layui-btn-group">
+                    <a href="{:url('level/edit')}?role_id={$vo.role_id}" class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
+                    <a data-href="{:url('level/delete?ids='.$vo.role_id)}" class="layui-btn layui-btn-primary layui-btn-small j-tr-del"><i class="layui-icon"></i></a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          {/volist}
+          </tbody>
+        </table>
+        {$pages}
+      </div>
+    </form>
+
+
+
+
+    {include file="common/footer" /}
+
+

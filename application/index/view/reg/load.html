@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en" class="fullscreen-bg">
+
+<head>
+    <title>注册随便提会员</title>
+    {include file="public/header" /}
+    <style>
+        #code{
+            width:100px;
+            display: inline-block;
+            float:left;
+        }
+
+        #signin-msg{
+            padding-left: 15px;
+        }
+        #signin_modal{
+            position:absolute;
+            top:25%;
+        }
+        #signin-msg{
+            color:#000;
+        }
+    </style>
+    <script>
+        $(function () {
+            $acount_status=false;
+            $pwd_status=false;
+            $('[data-toggle="popover"]').popover();
+            $("#phone").blur(function(){
+                $val=$(this).val();
+                var phone=$("#phone").val();
+                var pattern = /^1[34578]\d{9}$/;
+                if(!pattern.test(phone) ){
+                    $(this).attr('data-content','请输入正确手机号');
+                    $(this).popover('show');
+                    $acount_status=false;
+                    return false;
+                }
+                $(this).attr('data-content','输入正确');
+                $(this).popover('hide');
+                $acount_status=true;
+
+            });
+
+            $(".login_text").click(function(){
+                $(this).popover('hide');
+                // $('.popover').hide();
+            });
+            $("#login_btn").click(function(){
+
+                $res=($("#phone").blur());
+                if(!$acount_status){
+                    return 123;
+                }
+                $code=$('#code').val();
+//              if($code==''){
+//                  alert(1);
+//                  $("#signin-msg").html("请输入验证码");
+//                  $('#signin_modal').modal({backdrop: 'static', keyboard: false});
+//                  $('#code').attr('data-content','输入正确');
+//                  $('#code').popover('hide');
+//                  return;
+//              }
+                $.ajax({
+                    url:"{:url('reg/reg')}",
+                    type:'post',
+                    data:$('#signin-form').serialize(),
+                    datetype:'json',
+                    success:function(res){
+                        console.log($("#signin-msg"));
+                        $("#signin-msg").html(res.message);
+                        $('#signin_modal').modal({backdrop: 'static', keyboard: false});
+                        if(res.status==200){
+                            window.close();
+                        }else{
+                            $('#signin_modal').on('hidden.bs.modal', function (e) {
+
+
+                            })
+                        }
+                    },
+                    error:function(err){
+                        console.log(err);
+                    }
+                })
+
+            });
+            $('#code_btn').click(function(){
+                $_this=$(this);
+                var phone=$("#phone").val();
+                var pattern = /^1[34578]\d{9}$/;
+                if(!pattern.test(phone) ){
+                    $("#signin-msg").html("请输入正确手机号");
+                    $('#signin_modal').modal({backdrop: 'static', keyboard: false});
+                    return;
+                }
+
+                $.ajax({
+                    url:"{:url('api/login/sms_send')}",
+                    method:'get',
+                    data:{'phone':phone},
+                    datatype:'json',
+                    success:function(res){
+                        if(res.status==200){
+                            $_this.html(res.message);
+                            var count=60;
+                            var times=window.setInterval(function(){
+                                $_this.html(count+"秒后可重新发送");
+                                $_this.prop('disabled','disabled');
+                                count--;
+                                if(count==0){
+                                    clearInterval(times);
+                                }
+                            },1000);
+                        }else{
+                            $("#signin-msg").html(res.message);
+                            $('#signin_modal').modal({backdrop: 'static', keyboard: false});
+                        }
+                    }
+                })
+            })
+        })
+
+
+    </script>
+
+    <style>
+        body{
+            background-image:url("http://__ROOT_PATH__/__PUBLIC__/images/reg_back.png");
+
+        }
+        .auth-box{
+            background:rgba(0,0,0,0.7);
+            margin-top:35%;
+            height:400px;
+        }
+        .load_div{
+            margin-top:50px;
+            background:rgba(0,0,0,0.7);
+            overflow: hidden;
+        }
+        .load-ul{
+            list-style: none;
+            width:100%;
+            float:left;
+            padding-bottom:10px;
+        }
+        .load-ul li{
+            float:left;
+            margin-right:3%;
+
+        }
+        span,p{
+            color:white;
+        }
+        .vertical-align-middle{
+            display:block;
+            margin-top:30px;
+        }
+        .load_a{
+            margin-right:10%;
+            height:35px;
+            width:35%;
+        }
+        .load_title{
+            font-size:17px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- WRAPPER -->
+<div id="wrapper">
+    <div class="vertical-align-wrap">
+        <div class="vertical-align-middle">
+            <div class="auth-box ">
+                <div class="left">
+                    <div class="content">
+                        <div class="header">
+                            <div class="logo text-center">
+                                <!--<img src="/public/static/images/logo.jpg" width="50" height="30" alt="Klorofil Logo">-->
+                            </div>
+                            <p class="load_title">欢迎下载注册随便提APP</p>
+                        </div>
+                        <form class=" form-auth-small" id='signin-form' action="index.php">
+                            <div class="form-group">
+                                <span style="float:left;"></span>
+
+                            </div>
+                            <div  style="margin-top:30px;">
+                                <span style="">随便提APP下载</span>
+                                <!--<img  src="http://__ROOT_PATH__/public/static/images/load_font.png" width="100%" height="30" alt="Klorofil Logo">-->
+                            </div>
+                            <div  >
+                                <a href="{$ios_load_url}" class="btn btn-primary" style="width:45%;">
+                                    ios下载
+                                    <!--<img class="load_a" src="http://__ROOT_PATH__/public/static/images/ios_load.png" width="50" height="30" alt="Klorofil Logo">-->
+                                </a>
+
+                                <a  href="{$android_url}" class="btn btn-success" style="width:45%;">
+                                    <!--<img  class="load_a" src="http://__ROOT_PATH__/public/static/images/android_load.png" width="50" height="30" alt="Klorofil Logo">-->
+                                    android下载
+                                </a>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="load_div">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- END WRAPPER -->
+<!-- signin_Modal -->
+<div id='signin_modal' class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">温馨提示:</h4>
+            </div>
+            <div class="modal-body" >
+                <p id='signin-msg'></p>
+            </div>
+            <div class="modal-footer">
+                <button id='login_to' type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end signin_modal -->
+
+</body>
+
+</html>

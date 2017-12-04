@@ -1,0 +1,79 @@
+{include file="common/header" /}
+
+<form class="layui-form layui-form-pane" action="{:url('')}" method="post" id="editForm">
+  <div class="layui-form-item">
+    <label class="layui-form-label">等级名称</label>
+    <div class="layui-input-inline w300">
+      <input type="text" class="layui-input field-role_name" name="role_name"
+             value="" lay-verify="required" autocomplete="off" placeholder="请输入等级名称">
+    </div>
+    <div class="layui-form-mid layui-word-aux">平台的运营成本<br/>“0.003” 代表费率千分之3,不可输入整数</div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">等级介绍</label>
+    <div class="layui-input-inline w300">
+      <input type="text" class="layui-input field-role_text" name="role_text"
+             value="" lay-verify="required" autocomplete="off" placeholder="请输入等级描述">
+    </div>
+    <div class="layui-form-mid layui-word-aux">平台提现费率<br/>"0.003” 代表费率千分之3,不可输入整数</div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">提现费率</label>
+    <div class="layui-input-inline w300">
+      <input type="text" class="layui-input field-settle_rate" name="settle_rate"
+             value="" lay-verify="required" autocomplete="off" placeholder="请输入提现费率">
+    </div>
+    <div class="layui-form-mid layui-word-aux">订单手续费不足最低手续费的,将已最低手续费收取。单位:分</div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">等级条件</label>
+    <div class="layui-input-inline">
+      <input type="radio" class="field-upgrade_type" name="upgrade_type" value="1"  title="同时满足">
+      <input type="radio" class="field-upgrade_type" name="upgrade_type" value="2"  title="单日交易量满足">
+      <input type="radio" class="field-upgrade_type" name="upgrade_type" value="3"  title="推广人数满足">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">单日交易量</label>
+    <div class="layui-input-inline w300">
+      <input type="text" class="layui-input field-integral" name="integral"
+             value="" lay-verify="required" autocomplete="off" placeholder="请输入升级所需单日交易量">
+    </div>
+    <div class="layui-form-mid layui-word-aux">统计周期内的单日交易量</div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">推广人数</label>
+    <div class="layui-input-inline w300">
+      <input type="text" class="layui-input field-referrer_count" name="referrer_count"
+             value="" lay-verify="required" autocomplete="off" placeholder="请输入升级所需升级人数">
+    </div>
+    <div class="layui-form-mid layui-word-aux">商户下属推广人数<br/></div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">统计周期</label>
+    <div class="layui-input-inline w300">
+      <input type="text" class="layui-input field-period" name="period"
+             value="" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+    </div>
+    <div class="layui-form-mid layui-word-aux">升级条件统计周期;单位:天</div>
+  </div>
+
+
+
+
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <input type="hidden" class="field-role_id" name="role_id" value="">
+      <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+      <a href="{:url('level/index')}" class="layui-btn layui-btn-primary ml10"><i class="aicon ai-fanhui"></i>返回</a>
+    </div>
+  </div>
+</form>
+<script>
+    var formData = {:json_encode($data)};
+    console.log(formData);
+</script>
+
+
+{include file="common/footer" /}
+<script src="__ADMIN_JS__/js/footer.js"></script>

@@ -1,0 +1,66 @@
+{include file="common/header" /}
+
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <form class="layui-form layui-form-pane" action="{:url('add')}" method="post" id="editForm">
+      <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title"  disabled
+                 value="{$user['user_id']}"  autocomplete="off" placeholder="">
+        </div>
+        <!--<div class="layui-form-mid layui-word-aux">通道名称<br/> APP显示通道名称</div>-->
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title"  disabled
+                 value="{$user['name']}"  autocomplete="off" placeholder="">
+        </div>
+        <!--<div class="layui-form-mid layui-word-aux">通道名称<br/> APP显示通道名称</div>-->
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title"  disabled
+                 value="代理商通道成本设定" lay-verify="required" autocomplete="off" placeholder="">
+        </div>
+        <!--<div class="layui-form-mid layui-word-aux">通道名称<br/> APP显示通道名称</div>-->
+      </div>
+
+      {volist name="rate" id="vo"}
+        <div class="layui-form-item">
+          <label class="layui-form-label">{$vo.rate_name}</label>
+          <input type="hidden" value="{$vo.pay_prot_id}" name="pay_prot_id[]"/>
+          <div class="layui-input-inline w300">
+            <input type="text" class="layui-input field-title"  name="settle[]"
+                   value="" lay-verify="required" autocomplete="off" placeholder="请输入代理费率成本">
+          </div>
+          <div class="layui-form-mid layui-word-aux">代理成本费率,单位：%<br/>设定值必须在：<span style="color:red;">{$vo.costing*100}%~{$vo.settle_rate*100}%</span>之间</div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">服务费：</label>
+          <div class="layui-input-inline w300">
+            <input type="text" class="layui-input field-title"  name="extra_rate[]"
+                   value="" lay-verify="required" autocomplete="off" placeholder="请输入服务费率成本">
+          </div>
+          <div class="layui-form-mid layui-word-aux">服务费设定，单位：元（精确到分）<br/>设定值必须大于<span style="color:red;">{$vo.extra_rate/100}</span>；</div>
+        </div>
+      {/volist}
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <input type="hidden" class="field-id" name="user_id" value="{$user['user_id']}">
+          <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+          <a href="{:url('user/index')}" class="layui-btn layui-btn-primary ml10"><i class="aicon ai-fanhui"></i>返回</a>
+        </div>
+      </div>
+    </form>
+
+
+
+
+
+
+
+{include file="common/footer" /}
+

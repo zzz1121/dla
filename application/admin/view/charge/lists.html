@@ -1,0 +1,66 @@
+{include file="common/header" /}
+
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <div class="page-toolbar">
+      <!--<div class="layui-btn-group fl">
+        <a href="{:url('add')}" class="layui-btn layui-btn-primary"><i class="aicon ai-tianjia"></i>添加</a>
+        <a data-href="{:url('status?table=user&status=1')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-qiyong"></i>启用</a>
+        <a data-href="{:url('status?table=user&status=0')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-jinyong1"></i>禁用</a>
+       
+		<a data-href="{:url('delete')}" class="layui-btn layui-btn-primary j-page-btns confirm"><i class="aicon ai-jinyong"></i>删除</a>
+      </div>
+	   -->
+    </div>
+    <form id="pageListForm">
+      <div class="layui-form">
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+          <colgroup>
+            <col width="50">
+          </colgroup>
+          <thead>
+          <tr>
+            <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></th>
+            <th>通道名称</th>
+            <th>通道类型</th>
+            <th>通道提供方</th>
+            <th>平台成本</th>
+            <th>平台费率</th>
+            <th>锁定/使用</th>
+            <th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+          {volist name="lists" id="vo"}
+            <tr>
+              <td><input type="checkbox" name="ids[]" value="{$vo.pay_prot_id}" class="layui-checkbox checkbox-ids" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+              <td>{$vo.pay_name}</td>
+              <td>{$vo.rate_type}</td>
+              <td>{$vo.rate_name}</td>
+              <td>{$vo.costing}</td>
+              <td>{$vo.settle_rate}</td>
+              <td><input type="checkbox"  {if condition="$vo['status'] eq 1"}checked=""{/if} value="{$vo['status']}" lay-skin="switch" lay-filter="switchStatus" lay-text="正常|锁定" data-href="{:url('status?ids='.$vo['pay_prot_id'])}"></td>
+
+
+              <td>
+                <div class="layui-btn-group">
+                  <div class="layui-btn-group">
+                    <a href="{:url('edit')}?id={$vo.pay_prot_id}" class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
+                    <a data-href="{:url('delete?ids='.$vo.pay_prot_id)}" class="layui-btn layui-btn-primary layui-btn-small j-tr-del"><i class="layui-icon"></i></a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          {/volist}
+          </tbody>
+        </table>
+        {$pages}
+      </div>
+    </form>
+
+
+
+
+    {include file="common/footer" /}
+
+

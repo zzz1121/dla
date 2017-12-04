@@ -1,0 +1,89 @@
+{include file="common/header" /}
+
+{assign name="role_id" value="$Think.get.role_id" /}
+<div class="layui-tab-content page-tab-content">
+    <div class="layui-tab-item layui-show">
+<div class="page-toolbar">
+    <div class="page-filter fr">
+        <form class="layui-form layui-form-pane" action="{:url()}" method="get">
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">搜索</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="keyworld" value="{$Think.get.keyworld}" lay-verify="required" placeholder="姓名,手机号查找" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-inline">
+                    <button type="submit" class="layui-btn seach-btn" >提交</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="layui-btn-group fl">
+        <!--<a href="{:url('add')}" class="layui-btn layui-btn-primary"><i class="aicon ai-tianjia"></i>添加</a>-->
+        <a data-href="{:url('status?table=user&status=1')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-qiyong"></i>启用</a>
+        <a data-href="{:url('status?table=user&status=0')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-jinyong1"></i>禁用</a>
+        <!-- <a data-href="{:url('delUser')}" class="layui-btn layui-btn-primary j-page-btns confirm"><i class="aicon ai-jinyong"></i>删除</a>-->
+    </div>
+</div>
+<form id="pageListForm">
+    <div class="layui-form">
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+            <colgroup>
+                <col width="50">
+            </colgroup>
+            <thead>
+            <tr>
+                <th><input type="checkbox" lay-skin="primary" lay-filter="allChoose"></th>
+                <th>代理信息</th>
+                <th>等级&交易量</th>
+                <th>资金</th>
+                <th>直属商户&间接商户</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {volist name="user_list" id="vo"}
+            <tr>
+                <td><input type="checkbox" name="ids[]" class="layui-checkbox checkbox-ids" value="{$vo['ids']}" lay-skin="primary"></td>
+                <td class="font12">
+                    <p class="ml10 fl"><strong class="mcolor">
+                        {if condition="$vo['name']"}
+                            {$vo['name']}
+                        {else /}未认证{/if}
+                    </strong>
+                        <br>手机：{$vo['user_id']}</p>
+                </td>
+                <td class="font12">
+                    用户等级:签约代理商
+                    <br>
+                    下属商户数：{$vo['underling']+$vo['indirect']}</td>
+                <td class="font12">余额：{$vo['balance']}（元）<br>交易量：{$vo['integral']}（元）</td>
+                <td class="font12">直属商户：{$vo['underling']}<br>间接商户：{$vo['indirect']}</td>
+                <td><input type="checkbox"  {if condition="$vo['login_status'] eq 1"}checked=""{/if} value="{$vo['login_status']}" lay-skin="switch" lay-filter="switchStatus" lay-text="正常|锁定" data-href="{:url('status?table=user&ids='.$vo['merchant_id'])}"></td>
+                <td>
+                    <div class="layui-btn-group">
+                        <div class="layui-btn-group">
+                            <a href="{:url('update?user_id='.$vo['user_id'])}" class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon">&#xe642;</i></a>
+                            <!--<a data-href="{:url('edit?merchant_id='.$vo['merchant_id'])}" class="layui-btn layui-btn-primary layui-btn-small j-tr-del"><i class="layui-icon">&#xe640;</i></a>
+							-->
+						</div>
+                    </div>
+                </td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+        {$pages}
+    </div>
+</form>
+
+
+
+
+{include file="common/footer" /}
+

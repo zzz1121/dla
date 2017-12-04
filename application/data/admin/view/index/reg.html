@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" class="fullscreen-bg">
+
+<head>
+  <title>Login </title>
+  {include file="public/header" /}
+  <style>
+    #signin-code{
+      width:140px;
+      display: inline-block;
+      float:left;
+    }
+    #code_img{
+      width:127px;
+      height:34px;
+    }
+    #signin-msg{
+      padding-left: 15px;
+    }
+  </style>
+  <script>
+    $(function () {
+      $acount_status=false;
+      $pwd_status=false;
+      $('[data-toggle="popover"]').popover();
+      $("#signin-acount").blur(function(){
+        $val=$(this).val();
+        console.log($val);
+        var ret = /^[0-9]+$/;
+        if(!ret.test($val)){
+          $(this).attr('data-content','请输入手机号');
+          $(this).popover('show');
+        }else if($val.length<11){
+          $(this).attr('data-content','请输入11位账号');
+          $(this).popover('show');
+        }else if($val==''){
+          $(this).attr('data-content','用户名不能为空');
+          $(this).popover('show');
+        }else{
+          $(this).attr('data-content','输入正确');
+          $(this).popover('hide');
+          $acount_status=true;
+        }
+      });
+      $("#signin-password").blur(function(){
+        $val=$(this).val();
+        console.log($val);
+        var ret = /^[a-zA-Z0-9_]+$/;
+        if(!ret.test($val)){
+          $(this).attr('data-content','密码只能有字母数字下划线');
+          $(this).popover('show');
+        }else if($val.length<6){
+          $(this).attr('data-content','密码至少为6位');
+          $(this).popover('show');
+        }else if($val==''){
+          $(this).attr('data-content','密码不能为空');
+          $(this).popover('show');
+        }else{
+          $(this).attr('data-content','输入正确');
+          $(this).popover('hide');
+          $pwd_status=true;
+        }
+      });
+      $(".login_text").click(function(){
+        $(this).popover('hide');
+         // $('.popover').hide();
+      });
+      $("#login_btn").click(function(){
+        $('.login_text').blur();
+        if($acount_status==true && $pwd_status==true){
+          $.ajax({
+            url:"{:url('index/login')}",
+            type:'post',
+            data:$('#signin-form').serialize(),
+            datetype:'json',
+            success:function(res){
+              console.log(res);
+              $(".modal-title").html('温馨提示：');
+              $("#signin-msg").html(res.message);
+              $('#signin_modal').modal({backdrop: 'static', keyboard: false});
+              if(res.status==200){
+                  $('#signin_modal').on('hidden.bs.modal', function (e) {
+                     location.href="{:url('personal/index')}";
+
+                  })
+              }else{
+                $('#signin_modal').on('hidden.bs.modal', function (e) {
+                     $("#code_img").click();
+
+                })
+              }
+            },
+            error:function(err){
+              console.log(err);
+            }
+          })
+        }else{
+          if(!$acount_status){
+            $("#signin-acount").popover('show');
+          }
+          if(!$pwd_status){
+            $("#signin-password").popover('show');
+          }
+        }
+      })
+     
+    })
+  </script>
+  </head>
+
+  <body>
+  <!-- WRAPPER -->
+  <div id="wrapper">
+    <div class="vertical-align-wrap">
+      <div class="vertical-align-middle">
+        <div class="auth-box ">
+          <div class="left">
+            <div class="content">
+              <div class="header">
+                <div class="logo text-center">
+                  <!--<img src="/public/static/images/logo.jpg" width="50" height="30" alt="Klorofil Logo">-->
+                </div>
+                <p class="lead">登录到您的帐户</p>
+              </div>
+              <form class=" form-auth-small" id='signin-form' action="index.php">
+                <div class="form-group">
+                  <label for="signin-acount" class="control-label sr-only">账号</label>
+                  <input type="text" class="form-control login_text" id="signin-acount" value="18649738701" placeholder="请输入用户名"
+                    data-container="body"   data-toggle="blur" name='acount'
+                  >
+                    
+                </div>
+                <div class="form-group">
+                  <label for="signin-password" class="control-label sr-only">密码</label>
+                  <input type="password" class="form-control login_text" id="signin-password" value="123123" placeholder="请输入密码"
+                    data-container="body"   data-toggle="blur" name='password'
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="signin-code" class="control-label sr-only" >验证码</label>
+                  <input type="text" class="form-control" id="signin-code" value="" placeholder="验证码" name='code'>
+                  <img id='code_img' src="{:captcha_src()}" onClick="this.src='{:captcha_src()}?'+Math.random()"/>
+                </div>
+                <button type="button" class="btn btn-primary btn-lg btn-block" id='login_btn'>LOGIN</button>
+                <!--<div class="bottom">
+                  <span class="helper-text"><i class="fa fa-lock"></i> <a href="#">Forgot password?</a></span>
+                </div>
+				-->
+              </form>
+            </div>
+          </div>
+          <div class="right">
+            <div class="overlay"></div>
+            <div class="content text">
+              <h1 class="heading">更好的体验，带来更好的生活</h1>
+              <p>by Dream live</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END WRAPPER -->
+<!-- signin_Modal -->
+<div id='signin_modal' class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body" >
+        <p id='signin-msg'></p>
+      </div>
+      <div class="modal-footer">
+        <button id='login_to' type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end signin_modal -->
+
+</body>
+
+</html>

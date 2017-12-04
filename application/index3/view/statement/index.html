@@ -1,0 +1,74 @@
+{include file="common/header" /}
+
+
+
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <div class="page-toolbar">
+
+
+    </div>
+    <form id="pageListForm">
+      <div class="layui-form">
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+
+          <thead>
+            <tr>
+              <th>直属用户数</th>
+              <th>间接用户数</th>
+              <th>旗下总用户数</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{$user.underling}</td>
+              <td>{$user.indirect}</td>
+              <td>{$user.underling+$user.indirect}</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+          <!--<colgroup>-->
+            <!--<col width="50">-->
+          <!--</colgroup>-->
+          <thead>
+          <tr>
+            <th>用户提现总额（元）</th>
+            <th>个人分润总额（元）</th>
+            <th>账号分润余额（元）</th>
+          </tr>
+          </thead>
+          <tbody>
+            <td>{$order_total}</td>
+            <td>{$comm_total}</td>
+            <td>{$user.balance}</td>
+          </tbody>
+        </table>
+
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+          <!--<colgroup>-->
+          <!--<col width="50">-->
+          <!--</colgroup>-->
+          <thead>
+          <!--<tr>-->
+            <!--<th>平台注册数（人）</th>-->
+            <!--<th>已认证用户（人）</th>-->
+            <!--<th>未认证用户（人）</th>-->
+          <!--</tr>-->
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+
+      </div>
+    </form>
+  <script>
+  </script>
+
+
+
+    {include file="common/footer" /}
+
+
+

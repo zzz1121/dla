@@ -1,0 +1,100 @@
+{include file="common/header" /}
+
+
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <div class="page-toolbar">
+      <div class="page-filter fr">
+        <form class="layui-form layui-form-pane" action="{:url()}" method="get">
+          <div class="layui-form-item">
+            <label class="layui-form-label">开始时间</label>
+            <div class="layui-input-inline">
+              <input type="date" name="order_time" value="{$Think.get.order_time}" lay-verify="required" placeholder="姓名,手机号查找" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">结束时间</label>
+            <div class="layui-input-inline">
+              <input type="date" name="end_time" value="{$Think.get.end_time}" lay-verify="required" placeholder="姓名,手机号查找" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">搜索</label>
+            <div class="layui-input-inline">
+              <input type="text" name="keyworld" value="{$Think.get.keyworld}" lay-verify="required" placeholder="姓名,手机号查找" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <button type="submit" class="layui-btn seach-btn" >提交</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="layui-btn-group fl">
+        <!--<a href="{:url('add')}" class="layui-btn layui-btn-primary"><i class="aicon ai-tianjia"></i>添加</a>
+        <a data-href="{:url('status?table=user&status=1')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-qiyong"></i>启用</a>
+        <a data-href="{:url('status?table=user&status=0')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-jinyong1"></i>禁用</a>
+        <a data-href="{:url('delete')}" class="layui-btn layui-btn-primary j-page-btns confirm"><i class="aicon ai-jinyong"></i>删除</a>
+		-->
+	  </div>
+    </div>
+    <form id="pageListForm">
+      <div class="layui-form">
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+          <colgroup>
+            <col width="50">
+          </colgroup>
+          <thead>
+          <tr>
+            <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></th>
+            <th>分润单号</th>
+            <th>订单用户</th>
+            <th>订单姓名</th>
+            <th>订单金额（元）</th>
+            <th>分润总金额（元）</th>
+            <th>费率差分润（元）</th>
+            <th>服务费差分润（元）</th>
+            <th>推广分润（元）</th>
+            <th>订单时间</th>
+            <!--<th>操作</th>-->
+          </tr>
+          </thead>
+          <tbody>
+          {volist name="lists" id="vo"}
+            <tr>
+              <td><input type="checkbox" name="ids[]" value="{$vo.commission_id}" class="layui-checkbox checkbox-ids" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+              <td>{$vo.order_id}</td>
+              <td>{:substr_replace($vo.user_ids,"****",3,4)}</td>
+              <td>{:substr_replace($vo.username,'*',3,3)}</td>
+              <td>{$vo.order_money}</td>
+              <td>{$vo.commission_money}</td>
+              <td>{$vo.rate_money}</td>
+              <td>{$vo.service_money}</td>
+              <td>{$vo.share_money}</td>
+              <td>{$vo.commission_time|date="Y-m-d H:i:s",###}</td>
+
+              <!--<td>
+                <div class="layui-btn-group">
+                  <div class="layui-btn-group">
+                    <a  class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
+                    <a data-href="{:url('delete?ids='.$vo.commission_id)}" class="layui-btn layui-btn-primary layui-btn-small j-tr-del"><i class="layui-icon"></i></a>
+                  </div>
+                </div>
+              </td>
+			  -->
+            </tr>
+          {/volist}
+          </tbody>
+        </table>
+        {$pages}
+      </div>
+    </form>
+
+
+
+
+    {include file="common/footer" /}
+
+

@@ -1,0 +1,92 @@
+{include file="common/header" /}
+
+
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <div class="page-toolbar">
+      <div class="page-filter fr">
+        <form class="layui-form layui-form-pane" action="{:url()}" method="get">
+          <div class="layui-form-item">
+            <label class="layui-form-label">开始时间</label>
+            <div class="layui-input-inline">
+              <input type="date" name="order_time" value="{$Think.get.order_time}" lay-verify="required" placeholder="姓名,手机号查找" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">结束时间</label>
+            <div class="layui-input-inline">
+              <input type="date" name="end_time" value="{$Think.get.end_time}" lay-verify="required" placeholder="姓名,手机号查找" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">搜索</label>
+            <div class="layui-input-inline">
+              <input type="text" name="keyworld" value="{$Think.get.keyworld}" lay-verify="required" placeholder="姓名,手机号查找" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <button type="submit" class="layui-btn seach-btn" >提交</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+     
+    </div>
+    <form id="pageListForm">
+      <div class="layui-form">
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+          <colgroup>
+            <col width="50">
+          </colgroup>
+          <thead>
+          <tr>
+			<th>分润编号</th>
+            <th>订单号</th>
+            <th>订单用户</th>
+            <th>订单金额（元）</th>
+            <th>分润总金额（元）</th>
+            <th>费率差分润（元）</th>
+            <th>服务费差分润（元）</th>
+            <th>推广分润（元）</th>
+            <th>订单时间</th>
+            <!--<th>操作</th>-->
+          </tr>
+          </thead>
+          <tbody>
+          {volist name="lists" id="vo"}
+            <tr>
+              <td>{$vo.commission_id}</td>
+              <td>{$vo.order_id}</td>
+              <td>{:substr_replace($vo.user_id,"****",3,4)}</td>
+              <td>{$vo.order_money}</td>
+              <td>{$vo.commission_money}</td>
+              <td>{$vo.rate_money}</td>
+              <td>{$vo.service_money}</td>
+              <td>{$vo.share_money}</td>
+              <td>{$vo.commission_time|date="Y-m-d H:i:s",###}</td>
+
+              <!--<td>
+                <div class="layui-btn-group">
+                  <div class="layui-btn-group">
+                    <a  class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
+                    <a data-href="{:url('delete?ids='.$vo.commission_id)}" class="layui-btn layui-btn-primary layui-btn-small j-tr-del"><i class="layui-icon"></i></a>
+                  </div>
+                </div>
+              </td>
+			  -->
+            </tr>
+          {/volist}
+          </tbody>
+        </table>
+        {$pages}
+      </div>
+    </form>
+
+
+
+
+    {include file="common/footer" /}
+
+

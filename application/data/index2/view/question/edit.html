@@ -1,0 +1,85 @@
+{include file="common/header" /}
+
+<form class="layui-form layui-form-pane" action="{:url('')}" method="post" id="editForm">
+  <div class="layui-form-item">
+    <label class="layui-form-label">反馈单号</label>
+    <div class="layui-input-inline w300">
+      <input type="text" class="layui-input field-question_id" disabled="disabled"
+             value="" lay-verify="required" autocomplete="off" placeholder="请输入等级名称">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">反馈问题</label>
+    <div class="layui-input-inline w300">
+      <input type="text" class="layui-input field-question_body" disabled="disabled"
+             value="" lay-verify="required" autocomplete="off" placeholder="请输入等级名称">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">反馈人</label>
+    <div class="layui-input-inline w300">
+      <input type="text" class="layui-input field-name" disabled="disabled"
+             value="" lay-verify="required" autocomplete="off" placeholder="请输入等级名称">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">联系电话</label>
+    <div class="layui-input-inline w300">
+      <input type="text" class="layui-input field-mobile" disabled="disabled"
+             value="" lay-verify="required" autocomplete="off" placeholder="">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">联系qq</label>
+    <div class="layui-input-inline w300">
+      <input type="text" class="layui-input field-user_qq" disabled="disabled"
+             value="" lay-verify="required" autocomplete="off" placeholder="">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">反馈图片</label>
+    <div class="layui-input-inline w300">
+      <img src="http://__ROOT_PATH__/{$data.question_pic}" width="500" height="300">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">处理方式</label>
+    <div class="layui-input-inline w300">
+      <textarea rows="6" class="layui-textarea field-solution" name="solution" autocomplete="off" placeholder="请输入解决方案"></textarea>
+    </div>
+    <div class="layui-form-mid layui-word-aux">反馈的相应解决方案</div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">反馈单状态</label>
+    <div class="layui-input-inline w300">
+      <input type="radio" class="layui-input field-question_status" {eq name="$data.question_status" value='1'}
+		checked
+      {/eq} name="question_status"
+             value="1" lay-verify="required" autocomplete="off" title="未处理">
+      <input type="radio" class="layui-input field-question_status" name="question_status" {eq name="$data.question_status" value='2'}
+		checked
+      {/eq}
+             value="2" lay-verify="required" autocomplete="off" title="已处理">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <input type="hidden" class="field-id" name="id" value="">
+      {eq name="$data.question_status" value='1'}
+      <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+      {/eq}
+      <a href="{:url('question/index')}" class="layui-btn layui-btn-primary ml10"><i class="aicon ai-fanhui"></i>返回</a>
+    </div>
+  </div>
+</form>
+<script>
+    var formData = {:json_encode($data)};
+    console.log(formData);
+</script>
+
+
+{include file="common/footer" /}
+<script src="__ADMIN_JS__/js/footer.js"></script>

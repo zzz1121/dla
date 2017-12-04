@@ -1,0 +1,92 @@
+{include file="common/header" /}
+
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <form class="layui-form layui-form-pane" action="{:url('user/update')}" method="post" id="editForm">
+      <div class="layui-form-item">
+        <label class="layui-form-label">会员等级</label>
+        <div class="layui-input-inline ">
+          <select name="role_id" class="field-type" type="select">
+            {volist name="$Think.session.role_data" id="v"}
+            <option value="{$v['role_id']}"
+                    {eq name="$v['role_id']" value="$user['role_id']"}selected=selected{/eq} >{$v['role_name']}
+            </option>
+            {/volist}
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-inline">
+          <span class="layui-form-span">{$user['user_id']}</span>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+        <div class="layui-input-inline">
+          <span class="layui-form-span">{$user['name']}</span>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">身份证号</label>
+        <div class="layui-input-inline">
+          <span class="layui-form-span">{$user['number']}</span>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">地址</label>
+        <div class="layui-input-inline">
+          <p class="layui-form-span">{$user['address']}</p>
+
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">交易量</label>
+        <div class="layui-input-inline">
+          <p class="layui-form-span">{$user['order_count']}元</p>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">待分润余额</label>
+        <div class="layui-input-inline">
+          <p class="layui-form-span">{$user['not_account']}元</p>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">可提现余额</label>
+        <div class="layui-input-inline">
+          <p class="layui-form-span">{$user['balance_count']}元</p>
+        </div>
+      </div>
+
+
+      <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">状&nbsp;&nbsp;&nbsp;&nbsp;态</label>-->
+        <!--<div class="layui-input-inline">-->
+          <!--<input type="radio" class="field-status" name="status" value="1"-->
+                 <!--{eq name="$user['login_status']" value="1"} checked {/eq} title="启用" >-->
+          <!--<div class="layui-unselect layui-form-radio layui-form-radioed">-->
+            <!--<i class="layui-anim layui-icon"></i><span>启用</span>-->
+          <!--</div>-->
+          <!--<input type="radio" class="field-status" name="status" value="0"-->
+                 <!--{eq name="$user['login_status']" value="0"}checked{/eq} title="禁用">-->
+          <!--<div class="layui-unselect layui-form-radio"><i class="layui-anim layui-icon"></i><span>禁用</span></div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <input type="hidden" class="field-id" name="user_id" value="{$user['user_id']}">
+          <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+          <a href="{:url('user/index')}" class="layui-btn layui-btn-primary ml10"><i class="aicon ai-fanhui"></i>返回</a>
+        </div>
+      </div>
+    </form>
+
+
+
+
+
+
+
+{include file="common/footer" /}
+

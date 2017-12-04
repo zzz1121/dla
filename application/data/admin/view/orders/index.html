@@ -1,0 +1,188 @@
+{include file="common/header" /}
+
+
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <div class="page-toolbar">
+      <div class="page-filter fr" style="height: 98px;">
+        <form class="layui-form layui-form-pane" action="{:url()}" method="get">
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">交易类型</label>
+            <div class="layui-input-inline layui-select">
+              <select name="order_type" class="field-type" type="select">
+                <option value="0" {eq name="$Think.get.order_type" value=""}selected=selected{/eq}>请选择</option>
+                <option value="1" {eq name="$Think.get.order_type" value="1"}selected=selected{/eq}>D+0</option>
+                <option value="2" {eq name="$Think.get.order_type" value="2"}selected=selected{/eq}>T+1</option>
+
+              </select>
+            </div>
+            <div class="layui-form-mid layui-word-aux"></div>
+          </div>
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">支付通道</label>
+            <div class="layui-input-inline layui-select">
+              <select name="pay_prot_id" class="field-type" type="select">
+                <option value="0" {eq name="$Think.get.pay_prot_id" value=""}selected=selected{/eq}>请选择</option>
+                <option value="1" {eq name="$Think.get.pay_prot_id" value="1"}selected=selected{/eq}>上福支付</option>
+                <option value="2" {eq name="$Think.get.pay_prot_id" value="2"}selected=selected{/eq}>汇祥天成</option>
+              </select>
+            </div>
+            <div class="layui-form-mid layui-word-aux"></div>
+          </div>
+
+
+
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">订单状态</label>
+            <div class="layui-input-inline layui-select">
+              <select name="order_status" class="field-type" type="select">
+                <option value="0" {eq name="$Think.get.order_status" value=""}selected=selected{/eq}>请选择</option>
+                <option value="SUCCESS" {eq name="$Think.get.order_status" value="SUCCESS"}selected=selected{/eq}>已完成</option>
+                <option value="FAIL" {eq name="$Think.get.order_status" value="FALT"}selected=selected{/eq}>已关闭</option>
+                <option value="NOTPAY" {eq name="$Think.get.order_status" value="NOTPAY"}selected=selected{/eq}>未支付</option>
+                <option value="PROCESSING" {eq name="$Think.get.order_status" value="PROCESSING"}selected=selected{/eq}>处理中</option>
+              </select>
+            </div>
+            <div class="layui-form-mid layui-word-aux"></div>
+          </div>
+
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">开始时间</label>
+            <div class="layui-input-inline">
+              <input type="date" name="order_time" value="{$Think.get.order_time}" lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">结束时间</label>
+            <div class="layui-input-inline">
+              <input type="date" name="end_time" value="{$Think.get.end_time}" lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+          </div>
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">搜索</label>
+            <div class="layui-input-inline">
+              <input type="text" name="keyworld" value="{$Think.get.keyworld}" lay-verify="required" placeholder="姓名、手机号、订单号" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <button type="submit" class="layui-btn seach-btn" >查找</button>
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <a class="layui-btn seach-btn" href="{:url('orders/load')}{$seach}">下载excel</a>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="layui-btn-group fl">
+        <!--<a href="{:url('add')}" class="layui-btn layui-btn-primary"><i class="aicon ai-tianjia"></i>添加</a>
+        <a data-href="{:url('status?table=user&status=1')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-qiyong"></i>启用</a>
+        <a data-href="{:url('status?table=user&status=0')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-jinyong1"></i>禁用</a>
+        -->
+		<a data-href="{:url('delete')}" class="layui-btn layui-btn-primary j-page-btns confirm"><i class="aicon ai-jinyong"></i>一键关闭</a>
+      </div>
+      <div style="line-height:40px;padding-left:30px;">
+        总笔数：<span style="color:red;">{$count}</span>&nbsp;&nbsp;&nbsp;
+        总交易额 ：<span style="color:red;">{$data.orders_total}</span> 元&nbsp;&nbsp;&nbsp;
+        成功订单数：<span style="color:red;">{$data.success_count}</span>&nbsp;
+        成功订单金额 ：<span style="color:red;">{$data.success_total}</span> 元&nbsp;&nbsp;&nbsp;
+        失败订单数：<span style="color:red;">{$data.falt_count}</span>&nbsp;
+        失败订单金额 ：<span style="color:red;">{$data.falt_total}</span> 元&nbsp;&nbsp;&nbsp;
+        到账金额 ：<span style="color:red;">{$data.into_total}</span> 元
+
+      </div>
+
+    </div>
+
+    <form id="pageListForm">
+      <div class="layui-form">
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+          <colgroup>
+            <col width="50">
+          </colgroup>
+          <thead>
+          <tr>
+            <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></th>
+            <th>订单号</th>
+            <th>提现手机号</th>
+            <th style="width:72px;">用户姓名</th>
+            <th style="width: 180px;">提现金额&&到账金额</th>
+            <th>手续费&&服务费</th>
+            <th>支付信息</th>
+            <th>支付通道</th>
+            <th>订单状态</th>
+            <th>订单时间</th>
+            <th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+          {volist name="lists" id="vo"}
+            <tr>
+              <td><input type="checkbox" name="ids[]" value="{$vo.id}" class="layui-checkbox checkbox-ids" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+              <td>{$vo.order_id}</td>
+              <td>{$vo.user_id}</td>
+              <td>{$vo.name}</td>
+
+
+              <td  style="width: 180px;">
+                <p>提现金额：{$vo.order_money}（元）</p>
+                <p>到账金额：{$vo.arrival_amount}（元）</p>
+              </td>
+              <td>
+                <p>手续费：{$vo.cover_charge}（元）</p>
+                <p>服务费：{$vo.service_charge}（元）</p>
+              </td>
+
+              <td>
+                <p>支付卡：<br/>&nbsp;&nbsp;&nbsp;{$vo.from_card}</p>
+                <p>到账卡：<br/>&nbsp;&nbsp;&nbsp;{$vo.to_card}</p>
+
+              </td>
+
+              <td>
+
+                <p>{eq name="$vo['pay_prot_id']" value='1'}上福支付{/eq}</p>
+                <p>{eq name="$vo['pay_prot_id']" value='2'}汇享天成{/eq}</p>
+              </td>
+
+
+              <td>
+                {switch name="$vo.order_status" }
+                {case value="SUCCESS" break="0或1"}已完成{/case}
+                {case value="FAIL" break="0或1"}已关闭{/case}
+                {case value="NOTPAY" break="0或1"}未支付{/case}
+                {case value="PROCESSING" break="0或1"}处理中{/case}
+                {/switch}
+              </td>
+              <td>{:date('Y-m-d H:i:s', $vo['order_time'])}</td>
+
+              <td>
+                <div class="layui-btn-group">
+                  <div class="layui-btn-group">
+                    <a href="{:url('edit?ids='.$vo.id)}" class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
+                    <a data-href="{:url('delete?ids='.$vo.id)}" class="layui-btn layui-btn-primary layui-btn-small j-tr-del"><i class="layui-icon"></i></a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          {/volist}
+          </tbody>
+        </table>
+        {$pages}
+      </div>
+    </form>
+
+
+
+
+    {include file="common/footer" /}
+
+

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Dashboard | Klorofil - Free Bootstrap Dashboard Template</title>
+  {include file="public/header" /}
+  <style>
+    .label{
+      cursor: pointer;
+    }
+    .role_btn{
+      cursor:pointer;
+    }
+    .table th,td,tr{
+      height:42px;
+    }
+    .modal{
+      width: 100%;
+      height:100%;
+      background:rgba(0,0,0,0.1);
+      display: none;
+    }
+    .panel{
+      z-index:99;
+    }
+
+  </style>
+  <script>
+    function show_order(order_id){
+        $.ajax({
+            url:"{:url('orders/getOrderById')}",
+            data:{'order_id':order_id},
+            type:'post',
+            datatype:'json',
+            success:function(res){
+               document.getElementById('order_sn').innerHTML = res.order_id;
+                document.getElementById('name').innerHTML = res.name;
+                document.getElementById('number').innerHTML = res.user_id;
+                document.getElementById('time').innerHTML = getDate(res.order_time);
+                document.getElementById('status').innerHTML = res.order_status;
+                document.getElementById('pay_way').innerHTML ='银联快捷';
+                document.getElementById('money').innerHTML = res.order_money;
+                document.getElementById('shouxu').innerHTML = res.service_charge;
+                document.getElementById('fuwu').innerHTML = res.cover_charge;
+                document.getElementById('jiesuan').innerHTML = res.arrival_amount;
+            }
+        })
+    }
+    function getDate(tm){
+        var tt=new Date(parseInt(tm) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ")
+        return tt;
+    }
+
+
+    $(function(){
+      $("#orders_status").change(function(){
+        $orders_status=$(this).val();
+        $keyworld=$("#order_id").val();
+        location.href="{:url('orders/index')}?order_status="+$orders_status+"&keyworld="+$keyworld;
+      });
+      $("#search").click(function(){
+          $orders_status=$('#orders_status').val();
+          $keyworld=$("#order_id").val();
+          location.href="{:url('orders/index')}?order_status="+$orders_status+"&keyworld="+$keyworld;
+      });
+      $("#close_btn").click(function(){
+
+        $order_id=$(this).attr('order_id');
+        $_this=$(this);
+        $.ajax({
+          url:"{:url('orders/close_order')}",
+          data:{'order_id':$order_id},
+          type:'post',
+          datatype:'json',
+          success:function(res){
+            $_this.attr('data-content',res.message);
+            $_this.popover('show');
+            if(res.status==200){
+              window.setTimeout(function(){
+                location.reload();
+              },1000)
+            }else{
+              window.setTimeout(function(){
+                $("#delete_sub").popover('hide');
+              },1000)
+            }
+
+          }
+        })
+      })
+
+    });
+    function close_order(order_id){
+        $("#close_btn").attr('order_id',order_id);
+    }
+  </script>
+</head>
+
+<body style="background:white;">
+  <div >当前位置:订单管理</div>
+  <div style="height:20px;"></div>
+  <form class="form-inline">
+    <div class="form-group">
+      <label >订单状态：</label>
+      <select class='input-sm' id="orders_status">
+        <option value="">请选择</option>
+        {volist name="$orders_status" id="val"}
+          <option value="{$key}" {if condition="$status==$key"}selected="selected"{/if}}>{$val}  </option>
+        {/volist}
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="search">条件查找：</label>
+      <input type="text" class="form-control"  id="order_id" placeholder="输入订单号或手机号查找" value="{$order_id}" title='输入关键字，多条件以空格隔开'>
+      <button id="search" class='btn btn-warning' type="button">查找</button>
+    </div>
+  </form>
+
+  <div style="background:#999;height:1px;width:100%;margin:10px 0;"></div>
+  <div class="">
+      <table class="table" style="">
+        <thead>
+          <tr>
+            <th>订单号</th>
+            <th>提现金额</th>
+            <th>提现人</th>
+            <th>手机号</th>
+            <!--<th>入账卡</th>-->
+            <th>订单时间</th>
+
+            <th>订单状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        {volist name="list" id="data"}
+            <tr>
+              <td>{$data.order_id}</td>
+              <td>{$data.order_money}</td>
+              <td>{$data.name}</td>
+              <td>{$data.user_id}</td>
+              <!--<td>{$data.to_card}</td>-->
+              <td>
+                {$data.order_time|date="Y-m-d H:i:s",###}
+              </td>
+              <td>
+                {$orders_status[$data.order_status]}
+              </td>
+              <td>
+                <span class="label label-info" data-toggle="modal" data-target="#order_model"  onclick="show_order('{$data.id}')">订单详情</span>
+                {switch name="$data.order_status" }
+                {case value="NOTPAY" break="0或1"}
+                <span class="label label-danger" onclick="close_order('{$data.order_id}')"  data-toggle="modal" data-target="#myModal">关闭订单</span>{/case}
+                {default /}
+                {/switch}
+              </td>
+            </tr>
+        {/volist}
+        </tbody>
+      </table>
+    {$page}
+  </div>
+
+  <!-- 订单详情 -->
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="order_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="">订单详情</h4>
+        </div>
+        <div class="modal-body">
+          <div class="panel">
+            <div class="panel-heading">
+              <h3  class="panel-title">订单号:<span id="order_sn" style="color:black;"></span></h3>
+              <h3 class="panel-title">姓名:&nbsp;<span id="name" style="color:black;"></span></h3>
+              <h3 class="panel-title">手机号:&nbsp;<span id="number" style="color:black;"></span></h3>
+              <h3 class="panel-title">订单时间:&nbsp;<span id="time" style="color:black;"></span></h3>
+              <h3 class="panel-title">订单状态:&nbsp;<span id="status" style="color:black;"></span></h3>
+              <h3 class="panel-title">支付方式:&nbsp;<span id="pay_way" style="color:black;"></span></h3>
+              <h3 class="panel-title">提现金额:&nbsp;<span id="money" style="color:black;"></span></h3>
+              <h3 class="panel-title">手续费:&nbsp;<span id="shouxu" style="color:black;"></span></h3>
+              <h3 class="panel-title">服务费:&nbsp;<span id="fuwu" style="color:black;"></span></h3>
+              <h3 class="panel-title">结算金额:&nbsp;<span id="jiesuan" style="color:black;"></span></h3>
+            </div>
+            <div class="panel-body">
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button"  class="btn btn-danger" data-placement="top">确认关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end 订单详情 -->
+
+
+  <!-- 取消订单 -->
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">确认关闭订单?</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" id="close_btn" class="btn btn-danger" data-placement="top">确认关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end 取消订单 -->
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+{include file="common/header" /}
+
+
+
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <div class="page-toolbar">
+      <div class="page-filter fr">
+        <form class="layui-form layui-form-pane" action="{:url()}" method="get">
+
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">开始时间</label>
+            <div class="layui-input-inline">
+              <input type="date" name="start_time" value="{$data.start_time}" lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">结束时间</label>
+            <div class="layui-input-inline">
+              <input type="date" name="end_time" value="{$data.end_time}" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <button type="submit" class="layui-btn seach-btn" >搜索</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+    <form id="pageListForm">
+      <div class="layui-form">
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+
+          <thead>
+          <tr>
+            <th>用户交易总额（元）</th>
+            <th>手续费总额（元）</th>
+            <th>服务费总额（元）</th>
+
+            <th>到账总金额（元）</th>
+            <th>平台成本（元）</th>
+            <th>平台利润（元）</th>
+
+            <th>总笔数</th>
+
+          </tr>
+          </thead>
+          <tbody>
+            <td style="width:200px;">{$data.all_money}</td>
+            <td style="width:200px;">{$data.all_cover_charge}</td>
+            <td style="width:200px;">{$data.all_service_charge}</td>
+            <td style="width:200px;">{$data.all_arrival_amount}</td>
+
+            <td style="width:200px;">{$data.all_sye_cost}</td>
+            <td style="width:200px;">{$data.all_cover_charge-$data.all_sye_cost-$data.all_service_charge-$data.all_comm}</td>
+            <td style="width:200px;">{$data.all_num}</td>
+          </tbody>
+        </table>
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+          <!--<colgroup>-->
+            <!--<col width="50">-->
+          <!--</colgroup>-->
+          <thead>
+          <tr>
+            <th>用户分润总额（元）</th>
+            <th>用户分润余额（元）</th>
+            <th>用户已提现分润（元）</th>
+            <th>用户提现中分润（元）</th>
+            <th>手续费（元）</th>
+            <th>分润提现笔数</th>
+
+          </tr>
+          </thead>
+          <tbody>
+              <td>{$data.all_comm}</td>
+              <td>{$data.not_comm}</td>
+              <td>{$data.yet_comm}</td>
+              <td>{$data.being_comm}</td>
+              <td>{$data.service_comm}</td>
+              <td>{$data.yet_count}</td>
+
+          </tbody>
+        </table>
+
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+          <!--<colgroup>-->
+          <!--<col width="50">-->
+          <!--</colgroup>-->
+          <thead>
+          <tr>
+            <th>平台注册数（人）</th>
+            <th>已认证用户（人）</th>
+            <th>未认证用户（人）</th>
+          </tr>
+          </thead>
+          <tbody>
+          <td>{$data.user_count}</td>
+          <td>{$data.verify_count}</td>
+          <td>{$data.not_verify_count}</td>
+          </tbody>
+        </table>
+
+
+      </div>
+    </form>
+  <script>
+    var data={:json_encode($data)};
+    console.log(data);
+  </script>
+
+
+
+    {include file="common/footer" /}
+
+
+

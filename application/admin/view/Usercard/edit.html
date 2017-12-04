@@ -1,0 +1,78 @@
+{include file="common/header" /}
+
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <form class="layui-form layui-form-pane" action="{:url('update')}" method="post" id="editForm">
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">绑定用户</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input " readonly="readonly"
+                 value="{$user_card['user_id']}" lay-verify="required" autocomplete="off" placeholder="请输入通道费率">
+        </div>
+
+        <div class="layui-form-mid layui-word-aux">不可编辑</div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">银行名称</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input "  readonly="readonly"
+                 value="{$user_card.bank_name}" lay-verify="required" autocomplete="off" placeholder="请输入通道费率">
+        </div>
+
+        <div class="layui-form-mid layui-word-aux">不可编辑</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">银行联号</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input " readonly="readonly"
+                 value="{$user_card.bank_no}" lay-verify="required" autocomplete="off" placeholder="请输入通道费率">
+        </div>
+        <div class="layui-form-mid layui-word-aux">不可编辑</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">卡&nbsp;&nbsp;&nbsp;&nbsp;号</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input " name="card_id"
+                 value="{$user_card.card_id}" lay-verify="required" autocomplete="off" placeholder="请输入通道费率">
+        </div>
+
+        <div class="layui-form-mid layui-word-aux">银行卡号</div>
+      </div>
+      {eq name="$user_card.card_type" value="CREDIT"}
+          <div class="layui-form-item">
+            <label class="layui-form-label">卡片有效期</label>
+            <div class="layui-input-inline w300">
+              <input type="text" class="layui-input " name="card_end"
+                     value="{$user_card.card_end}" lay-verify="required" autocomplete="off" placeholder="请输入通道费率">
+            </div>
+            <div class="layui-form-mid layui-word-aux">格式：月月/年年</div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">CVV码</label>
+            <div class="layui-input-inline w300">
+              <input type="text" class="layui-input " name="card_cvv"
+                     value="{$user_card.card_cvv}" lay-verify="required" autocomplete="off" placeholder="请输入通道费率">
+            </div>
+            <div class="layui-form-mid layui-word-aux">卡片背面安全码</div>
+          </div>
+      {/eq}
+
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <input type="hidden" class="field-id" name="id" value="{$user_card['id']}">
+          <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+          <a href="{:url('usercard/index')}" class="layui-btn layui-btn-primary ml10"><i class="aicon ai-fanhui"></i>返回</a>
+        </div>
+      </div>
+    </form>
+
+
+
+
+
+
+
+{include file="common/footer" /}
+

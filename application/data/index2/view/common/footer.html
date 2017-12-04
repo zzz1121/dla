@@ -1,0 +1,35 @@
+<div class="layui-footer footer">
+    <span class="fl">Powered by <a href="http://www.hisiphp.com?v=thinkphp5" target="_blank">HisiPHP</a> v1.0.0</span>
+    <span class="fr"> © 2017-2018 <a href="http://www.hisiphp.com?v=thinkphp5" target="_blank">HisiPHP.COM</a> All Rights Reserved.</span>
+</div>
+</div>
+<script src="__ADMIN_JS__/js/global.js"></script>
+<script>
+    layui.use(['form'], function() {
+        var $ = layui.jquery, form = layui.form();
+        form.on('select(group)', function(data) {
+            console.log(data);
+            $('#groupShow').html(data.value);
+        });
+		
+    });
+	
+    layui.use(["form"], function(){
+        var form= layui.form();
+		
+        form.on("select(SelectType)", function(data){
+            var OptionIndex = data.elem.selectedIndex; //得到选中的下标
+            var text = data.elem.options[OptionIndex].text; //得到选中下标的文本信息
+            var elem=$(data.elem);
+            console.log(elem.attr('data-href'));
+            if(elem.attr('data-href')){
+                window.location.href=elem.attr('data-href')+"?"+elem.attr('name')+"="+elem.val();
+            }
+            //console.log(data.elem); //得到select原始DOM对象
+            //console.log(data.value); //得到被选中的值
+        });
+		form.render();
+    });
+</script>
+
+</body></html>

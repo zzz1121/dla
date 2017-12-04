@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Dashboard | Klorofil - Free Bootstrap Dashboard Template</title>
+    {include file="public/header" /}
+
+
+</head>
+
+<body>
+<div style="height:20px;"></div>
+<form  action='{:url("merchant/index")}' class="form-inline" method="POST">
+    <div class="form-group">
+        <label >用户认证状态：</label>
+        <select name='card_status' class='input-sm' id="user_status">
+            <option value="">请选择</option>
+            <option value="1">已认证</option>
+            <option value="0">未认证</option>
+        </select>
+    </div>
+
+    <div class="form-group" style="padding-left: 4em">
+        <label for="search">查找：</label>
+        <input type="text" class="form-control"  name='keyworld' placeholder="请输入代理姓名或电话号码" value="" title='输入关键字，多条件以空格隔开'>
+        <button id="search" class='btn btn-warning' type="submit">查找</button>
+    </div>
+</form>
+
+<div style="background:#999;height:1px;width:100%;margin:10px 0;"></div>
+
+<table class='table'  >
+    <thead>
+    <tr>
+        <th>代理账号</th>
+        <th>姓名</th>
+        <!--<th>地址</th>-->
+        <th>代理级别</th>
+        <th>提现汇率</th>
+        <th>账户余额</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {volist name="user_list" id="vo"}
+    <tr>
+        <td>{$vo.merchant_id}</td>
+        <td>{$vo.name}</td>
+        <td>
+            {switch $vo.role_id}
+            {case value='2'}
+                合伙人
+            {/case}
+            {case value='3'}
+                高级代理
+            {/case}
+            {case value='4'}
+                普通代理
+            {/case}
+            {/switch}
+        </td>
+        <td>
+            {$vo.settle_rate}
+
+        </td>
+        <td>
+            {$vo.balance}
+
+        </td>
+        <td>
+            <!--<span class="label label-success">详情</span>-->
+            {switch $vo.merchant_status}
+                {case value='1'}
+                    <span class="label label-danger" onclick="insert_merchangt({$vo.merchant_id})">锁定</span>
+                {/case}
+                {case value='2'}
+                <span class="label label-danger" onclick="insert_merchangt({$vo.merchant_id})">解锁</span>
+                {/case}
+            {/switch}
+            <span class="label label-success">设置代理等级</span>
+        </td>
+    </tr>
+    {/volist}
+    </tbody>
+</table>
+
+<div>{$page}</div>
+
+</body>
+<script>
+    $(function(){
+        $("#user_status").change(function(){
+            $status=$(this).val();
+            $order_id=$("#order_id").val();
+            location.href="{:url('user/index')}?card_status="+$status+"&order_id="+$order_id;
+        });
+        $("#close_btn").click(function(){
+            $order_id=$(this).attr('order_id');
+            $_this=$(this);
+            $.ajax({
+                url:"{:url('orders/close_order')}",
+                data:{'order_id':$order_id},
+                type:'post',
+                datatype:'json',
+                success:function(res){
+                    $_this.attr('data-content',res.message);
+                    $_this.popover('show');
+                    if(res.status==200){
+                        window.setTimeout(function(){
+                            location.reload();
+                        },1000)
+                    }else{
+                        window.setTimeout(function(){
+                            $("#delete_sub").popover('hide');
+                        },1000)
+                    }
+
+                }
+            })
+        })
+
+    });
+    function close_order(order_id){
+        $("#close_btn").attr('order_id',order_id);
+    }
+</script>
+
+</html>

@@ -1,0 +1,60 @@
+{include file="common/header" /}
+
+    <form class="layui-form layui-form-pane" action="{:url('charge/update')}" method="post" id="editForm">
+      <div class="layui-form-item">
+        <label class="layui-form-label">短信接口</label>
+        <div class="layui-input-inline ">
+          <select name="id" class="field-type" type="select" data-href="{:url('')}" lay-filter="SelectType">
+            <option value="1" {eq name="$data.sms" value="1"}selected="selected"{/eq}>阿里大于</option>
+            <option value="2" {eq name="$data.sms" value="2"}selected="selected"{/eq}>云服务</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">银行卡四要素接口</label>
+        <div class="layui-input-inline ">
+          <select name="id" class="field-type" type="select" data-href="{:url('')}" lay-filter="SelectType">
+            <option value="1" {eq name="$Think.get.id" value="1"}selected="selected"{/eq}>阿里云服务</option>
+            <option value="2" {eq name="$Think.get.id" value="2"}selected="selected"{/eq}>汇享鉴权</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">支付通道选择</label>
+        <div class="layui-input-inline ">
+          <select name="pay_prot_id" class="field-type" type="select"  lay-filter="SelectType">
+            <option value="1" {eq name="$rate_data.pay_prot_id" value="1"}selected="selected"{/eq}>上福支付</option>
+            <option value="2" {eq name="$rate_data.pay_prot_id" value="2"}selected="selected"{/eq}>汇享天成</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">开启时间</label>
+        <div class="layui-input-inline w300">
+          <input type="time" class="layui-input field-title" name="start_time"
+                 value="{$rate_data['start_time']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">通道每日开启时间；单位：时</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">关闭时间</label>
+        <div class="layui-input-inline w300">
+          <input type="time" class="layui-input field-title" name="end_time"
+                 value="{$rate_data['end_time']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">通道每日关闭时间；单位：时</div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <!--<input type="hidden" class="field-id" name="id" value="{$rate_data['id']}">-->
+          <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+          <!--<a href="{:url('charge/update')}" class="layui-btn layui-btn-primary ml10"><i class="aicon ai-fanhui"></i>返回</a>-->
+        </div>
+      </div>
+    </form>
+  <script>
+  </script>
+
+{include file="common/footer" /}
+<!--<script src="__ADMIN_JS__/js/footer.js"></script>-->

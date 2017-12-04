@@ -1,0 +1,41 @@
+{include file="common/header" /}
+
+<form class="layui-form layui-form-pane" action="{:url('personal/update_pwd')}" method="post" id="editForm">
+  <div class="layui-form-item">
+    <label class="layui-form-label">原密码</label>
+    <div class="layui-input-inline w300">
+      <input type="password" class="layui-input field-question_id" name="password"
+             value="" lay-verify="required" autocomplete="off" placeholder="请输入原密码">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">新密码</label>
+    <div class="layui-input-inline w300">
+      <input type="password" class="layui-input field-question_body" name="last_password"
+             value="" lay-verify="required" autocomplete="off" placeholder="请输入新密码">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">再次输入</label>
+    <div class="layui-input-inline w300">
+      <input type="password" class="layui-input field-name" name="last_password2"
+             value="" lay-verify="required" autocomplete="off" placeholder="请再次输入新密码">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <input type="hidden" class="field-id" name="id" value="">
+      <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+      <a href="{:url('charge/index')}" class="layui-btn layui-btn-primary ml10"><i class="aicon ai-fanhui"></i>返回</a>
+    </div>
+  </div>
+</form>
+<script>
+    var formData = {:json_encode($data)};
+    console.log(formData);
+</script>
+
+
+{include file="common/footer" /}
+<script src="__ADMIN_JS__/js/footer.js"></script>

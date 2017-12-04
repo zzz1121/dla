@@ -1,0 +1,114 @@
+{include file="common/header" /}
+
+
+<div class="layui-tab-content page-tab-content">
+    <div class="layui-tab-item layui-show">
+        <div class="page-toolbar">
+            <div class="page-filter fr">
+                <form class="layui-form layui-form-pane" action="{:url()}" method="get">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">升级等级</label>
+                        <div class="layui-input-inline layui-select">
+                            <select name="up_role" class="field-type" type="select"
+                                data-href="{:url('audit')}"  lay-filter="up_role_id" >
+                                {volist name="$role_data" id="v"}
+                                <option value="{$v['role_id']}" {eq name="$v['role_id']" value="$up_role"}selected=selected{/eq} >{$v['role_name']}</option>
+                                {/volist}
+                            </select>
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"></div>
+                    </div>
+
+                    <div class="layui-form-item">
+
+                        <a data-href="{:url('up_level?up_role='.$up_role)}"  data-form="#pageListForm"
+                           class="layui-btn layui-btn-primary j-up-lv-menu">
+                            <i class="layui-icon">&#xe619;</i>一键升级</a>
+                    </div>
+
+                </form>
+            </div>
+            <!--<div class="layui-btn-group fl">-->
+                <!--<a href="{:url('add')}" class="layui-btn layui-btn-primary"><i class="aicon ai-tianjia"></i>添加</a>-->
+                <!--<a data-href="{:url('status?table=user&status=1')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-qiyong"></i>启用</a>-->
+                <!--<a data-href="{:url('status?table=user&status=0')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-jinyong1"></i>禁用</a>-->
+                <!--<a data-href="{:url('delUser')}" class="layui-btn layui-btn-primary j-page-btns confirm"><i class="aicon ai-jinyong"></i>删除</a>-->
+            <!--</div>-->
+        </div>
+        <p>当前升级条件：</p>
+        {switch name="$upgrade.upgrade_type" }
+            {case value="1" break="0或1"}推广人数:{$upgrade.referrer_count}人  &&  最近{$upgrade.period}天：日流水金额:{$upgrade.integral}元{/case}
+            {case value="2" break="0或1"}最近{$upgrade.period}天：日流水金额:{$upgrade.integral}元{/case}
+            {case value="3" break="0或1"}推广人数:{$upgrade.referrer_count}人{/case}
+        {/switch}
+        <form id="pageListForm">
+            <div class="layui-form">
+                <table class="layui-table mt10" lay-even="" lay-skin="row">
+                    <colgroup>
+                        <col width="50">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></th>
+                        <th>用户账号</th>
+                        <th>用户名</th>
+                        <th>当前等级</th>
+                        <th>直属商户数</th>
+                        <th>间接商户数</th>
+                        <th>周期日均交易量</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name="lists" id="vo"}
+                    <tr>
+                        <td><input type="checkbox" name="ids[]" value="{$vo.ids}" class="layui-checkbox checkbox-ids" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+                        <td>{$vo.user_id}</td>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.role_name}</td>
+                        <td>{$vo.underling}</td>
+                        <td>{$vo.indirect}</td>
+                        <td>{$vo.average}</td>
+                        <!--<td>0</td>-->
+
+                        <td>
+                            <div class="layui-btn-group">
+                                <div class="layui-btn-group">
+                                    <a data-href="{:url('up_level')}?ids={$vo.ids}&up_role={$up_role}" class="layui-btn layui-btn-primary layui-btn-small j-tr-up-lv"><i class="layui-icon">&#xe619;</i></a>
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </form>
+<script>
+    layui.use(["form"], function(){
+        var form= layui.form();
+
+        form.on("select(up_role_id)", function(data){
+
+            var OptionIndex = data.elem.selectedIndex; //得到选中的下标
+            var text = data.elem.options[OptionIndex].text; //得到选中下标的文本信息
+            var elem=$(data.elem);
+
+            if(elem.attr('data-href')){
+                window.location.href=elem.attr('data-href')+"?"+elem.attr('name')+"="+elem.val();
+            }
+            //console.log(data.elem); //得到select原始DOM对象
+
+            //console.log(data.value); //得到被选中的值
+        });
+        form.render();
+    });
+</script>
+
+
+
+        {include file="common/footer" /}
+
+
+

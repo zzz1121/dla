@@ -1,0 +1,37 @@
+{include file="common/header" /}
+    <p>设定范围只能为：<span style="color:red;">{$rate_data['settle_rate']*100/100}</span> 到 <span style="color:red;">{$sye_rate*100/100}之间</span></p>
+    <form class="layui-form layui-form-pane" action="{:url('charge/update')}" method="post" id="editForm">
+      <div class="layui-form-item">
+        <label class="layui-form-label">我的费率</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" disabled="disabled"
+                 value="{$rate_data['settle_rate']*100/100}" lay-verify="required" autocomplete="off" placeholder="">
+        </div>
+        <div class="layui-form-mid layui-word-aux">我的成本费率<br/>“0.003” 代表费率千分之3</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">直属费率</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="settle_2"
+                 value="{$rate_data['settle_2']*100/100}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">直属用户提现费率<br/>"0.003” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">推广费率</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="settle_3"
+                 value="{$rate_data['settle_3']*100/100}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">推广用户提现费率<br/>"0.003” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+        </div>
+      </div>
+    </form>
+
+
+{include file="common/footer" /}
+<!--<script src="__ADMIN_JS__/js/footer.js"></script>-->

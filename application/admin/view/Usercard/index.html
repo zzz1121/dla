@@ -1,0 +1,104 @@
+{include file="common/header" /}
+
+{assign name="role_id" value="$Think.get.role_id" /}
+<div class="layui-tab-content page-tab-content">
+    <div class="layui-tab-item layui-show">
+<div class="page-toolbar">
+    <div class="page-filter fr">
+        <form class="layui-form layui-form-pane" action="{:url()}" method="get">
+            <div class="layui-form-item">
+                <label class="layui-form-label">银行卡类型</label>
+                <div class="layui-input-inline layui-select">
+                    <select name="card_status" class="field-type" type="select">
+                        <option value="-1" {eq name="$Think.get.card_status" value=""}selected=selected{/eq}>请选择</option>
+                        <option value="CREDIT" {eq name="$Think.get.card_status" value="CREDIT"}selected=selected{/eq}>信用卡</option>
+                        <option value="DEBIT" {eq name="$Think.get.card_status" value="DEBIT"}selected=selected{/eq}>借记卡</option>
+                    </select>
+                </div>
+                <div class="layui-form-mid layui-word-aux"></div>
+            </div>
+
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">搜索</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="keyworld" value="{$Think.get.keyworld}" lay-verify="required" placeholder="卡号,手机号查找" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-inline">
+                    <button type="submit" class="layui-btn seach-btn" >提交</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<form id="pageListForm"  class="layui-form layui-form-pane">
+
+
+
+
+    <div class="layui-form">
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+            <colgroup>
+                <col width="50">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>卡号</th>
+
+                <th>银行名称</th>
+                <th>绑定用户</th>
+                <th>卡片类型</th>
+                <th>卡片有效期（月月/年年）</th>
+                <th>CVV码</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {volist name="lists" id="vo"}
+            <tr>
+               <td>{$vo.id}</td>
+               <td>{$vo.card_id}</td>
+
+               <td>{$vo.bank_name}</td>
+               <td>{$vo.user_id}</td>
+                <td>
+                    {eq name="$vo.card_type" value="CREDIT"}信用卡{/eq}
+                    {eq name="$vo.card_type" value="DEBIT"}借记卡{/eq}
+                </td>
+               <td>
+                   {$vo.card_end}
+                   {eq name="$vo.card_end" value=""}无{/eq}
+               </td>
+               <td>
+                   {switch name="$vo.card_cvv"}
+                   {case value="0"}无{/case}
+                   {default /}{$vo.card_cvv}
+                   {/switch}
+               </td>
+               <td>
+                   <div class="layui-btn-group">
+                       <div class="layui-btn-group">
+                           <a href="{:url('edit?id='.$vo['id'])}" class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon">&#xe642;</i></a>
+                           <!--<a data-href="{:url('edit?user_id='.$vo['user_id'])}" class="layui-btn layui-btn-primary layui-btn-small j-tr-del"><i class="layui-icon">&#xe640;</i></a>
+                           -->
+                       </div>
+                   </div>
+               </td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+        {$pages}
+    </div>
+</form>
+
+
+
+
+{include file="common/footer" /}
+

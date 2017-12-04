@@ -1,0 +1,101 @@
+{include file="common/header" /}
+
+
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <div class="page-toolbar">
+      <div class="page-filter fr">
+        <form class="layui-form layui-form-pane" action="{:url()}" method="get">
+          <div class="layui-form-item">
+            <label class="layui-form-label">订单状态</label>
+            <div class="layui-input-inline layui-select">
+              <select name="order_status" class="field-type" type="select">
+                <option value="0" {eq name="$Think.get.order_status" value=""}selected=selected{/eq}>请选择</option>
+                <option value="1" {eq name="$Think.get.order_status" value="1"}selected=selected{/eq}>未处理</option>
+                <option value="2" {eq name="$Think.get.order_status" value="2"}selected=selected{/eq}>已处理</option>
+              </select>
+            </div>
+            <div class="layui-form-mid layui-word-aux"></div>
+          </div>
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">订单时间</label>
+            <div class="layui-input-inline">
+              <input type="date" name="order_time" value="{$Think.get.order_time}" lay-verify="required" placeholder="姓名,手机号查找" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">搜索</label>
+            <div class="layui-input-inline">
+              <input type="text" name="keyworld" value="{$Think.get.keyworld}" lay-verify="required" placeholder="姓名,手机号查找" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <button type="submit" class="layui-btn seach-btn" >提交</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <!--<div class="layui-btn-group fl">
+        <a href="{:url('add')}" class="layui-btn layui-btn-primary"><i class="aicon ai-tianjia"></i>添加</a>
+        <a data-href="{:url('status?table=user&status=1')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-qiyong"></i>启用</a>
+        <a data-href="{:url('status?table=user&status=0')}" class="layui-btn layui-btn-primary j-page-btns"><i class="aicon ai-jinyong1"></i>禁用</a>
+        <a data-href="{:url('delete')}" class="layui-btn layui-btn-primary j-page-btns confirm"><i class="aicon ai-jinyong"></i>删除</a>
+      </div>
+	  -->
+    </div>
+    <form id="pageListForm">
+      <div class="layui-form">
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+          <colgroup>
+            <col width="50">
+          </colgroup>
+          <thead>
+          <tr>
+            <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></th>
+            <th>反馈单号</th>
+            <th>反馈内容</th>
+            <th>联系qq</th>
+            <th>联系电话</th>
+            <th>提交时间</th>
+            <th>状态</th>
+			<th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+          {volist name="lists" id="vo"}
+            <tr>
+              <td><input type="checkbox" name="ids[]" value="{$vo.id}" class="layui-checkbox checkbox-ids" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div></td>
+              <td>{$vo.question_id}</td>
+              <td>{$vo.question_body}</td>
+              <td>{$vo.user_qq}</td>
+              <td>{$vo.mobile}</td>
+              <td>{:date('Y-m-d H:i:s', $vo['question_time'])}</td>
+              <td>
+                {$Think.config.question_status[$vo.question_status]}
+              </td>
+              <td>
+                <div class="layui-btn-group">
+                  <div class="layui-btn-group">
+                    <a href="{:url('edit?ids='.$vo.id)}" class="layui-btn layui-btn-primary layui-btn-small"><i class="layui-icon"></i></a>
+                    <!--<a data-href="{:url('delete?ids='.$vo.id)}" class="layui-btn layui-btn-primary layui-btn-small j-tr-del"><i class="layui-icon"></i></a>
+					 -->
+				  </div>
+                </div>
+              </td>
+			 
+            </tr>
+          {/volist}
+          </tbody>
+        </table>
+        {$pages}
+      </div>
+    </form>
+
+
+
+
+    {include file="common/footer" /}
+

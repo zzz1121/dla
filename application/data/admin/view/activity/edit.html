@@ -1,0 +1,78 @@
+{include file="common/header" /}
+
+<form class="layui-form layui-form-pane" action="{:url('')}" method="post" id="editForm">
+  <div class="layui-form-item">
+    <label class="layui-form-label">活动标题</label>
+    <div class="layui-input-inline w300">
+      <textarea rows="6" class="layui-textarea field-title" name="title"
+                autocomplete="off" placeholder="请输入活动标题"></textarea>
+    </div>
+    <!--<div class="layui-form-mid layui-word-aux">活动<br/>“0.003” 代表费率千分之3,不可输入整数</div>-->
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">活动地址</label>
+    <div class="layui-input-inline w300">
+      <textarea rows="6" class="layui-textarea field-url" name="url"
+                 autocomplete="off" placeholder="请输入活动标题"></textarea>
+    </div>
+    <div class="layui-form-mid layui-word-aux">平台提现费率<br/>"0.003” 代表费率千分之3,不可输入整数</div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">活动图片</label>
+    <div class="layui-input-inline upload">
+      <div class="layui-box layui-upload-button">
+        <form target="layui-upload-iframe" method="post" key="set-mine" enctype="multipart/form-data" action="{:url('')}">
+          <input type="file" class="layui-upload-file" name="upload" lay-type="image" autocomplete="off"
+                 lay-title="请上传活动图片" lay-url="" lay-ext="jpg|png|gif|jpeg|ico">
+        </form>
+        <span class="layui-upload-icon"><i class="layui-icon"></i>请上传网站LOGO</span></div>
+
+      {if condition="$data['path']"}
+        <input type="hidden" class="upload-input" name="path" value="{$data['path']}">
+        <img src="http://__ROOT_PATH__{$data['path']}" style="display:inline-block;border-radius:5px;border:1px solid #ccc" width="350" height="100">
+      {else /}
+        <img src="" style="display:none;border-radius:5px;border:1px solid #ccc" width="350" height="100">
+        <input type="hidden" class="upload-input" name="path" value="">
+      {/if}
+    </div>
+    <div class="layui-form-mid layui-word-aux">活动图片</div>
+    <input type="hidden" class="field-activity_id" name="activity_id" value="">
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+
+      <button type="submit" data-form="#editForm" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+      <a href="{:url('activity/index')}" class="layui-btn layui-btn-primary ml10"><i class="aicon ai-fanhui"></i>返回</a>
+    </div>
+  </div>
+</form>
+<script>
+    var formData = {:json_encode($data)};
+    layui.use(['jquery', 'form', 'laydate', 'upload'], function() {
+        var $ = layui.jquery, form = layui.form, laydate = layui.laydate, layer = layui.layer;
+        layui.upload({
+            url: "{:url('activity/upload_img')}"
+            ,method: 'post'
+            ,before: function(input) {
+                layer.msg('文件上传中...', {time:3000000});
+            },success: function(res, obj) {
+                if (res.status !== 200) {
+                    layer.msg(res.info);
+                    return false;
+                }
+                layer.closeAll();
+                var input = $(obj).parents('.upload').find('.upload-input');
+                if ($(obj).attr('lay-type') == 'image') {
+                    input.siblings('img').attr('src', "http://__ROOT_PATH__/"+res.data).show();
+                }
+                input.val(res.data);
+            }
+        });
+    });
+
+</script>
+
+
+{include file="common/footer" /}
+<script src="__ADMIN_JS__/js/footer.js"></script>

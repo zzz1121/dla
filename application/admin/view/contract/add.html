@@ -1,0 +1,91 @@
+{include file="common/header" /}
+
+{assign name="role_id" value="$Think.get.role_id" /}
+<div class="layui-tab-content page-tab-content">
+  <div class="layui-tab-item layui-show">
+    <div class="page-toolbar">
+      <div class="page-filter fr">
+        <form class="layui-form layui-form-pane" action="{:url()}" method="get">
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">推广用户数</label>
+            <div class="layui-input-inline">
+              <input type="text" name="user_count" value="{$Think.get.user_count}" lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+          </div>
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">累计金额（元）</label>
+            <div class="layui-input-inline">
+              <input type="text" name="integral" value="{$Think.get.integral}" lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label">统计周期</label>-->
+            <!--<div class="layui-input-inline">-->
+              <!--<input type="text" name="times" value="{$Think.get.times}" lay-verify="required"  autocomplete="off" class="layui-input">-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <div class="layui-form-item">
+            <label class="layui-form-label">搜索</label>
+            <div class="layui-input-inline">
+              <input type="text" name="keyworld" value="{$Think.get.keyworld}" lay-verify="required" placeholder="姓名、手机号" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-inline">
+              <button type="submit" class="layui-btn seach-btn" >查找</button>
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+
+    </div>
+    <form id="pageListForm" class="layui-form layui-form-pane">
+
+      <div class="layui-form">
+        <table class="layui-table mt10" lay-even="" lay-skin="row">
+          <colgroup>
+            <col width="50">
+          </colgroup>
+          <thead>
+          <tr>
+            <th><input type="checkbox" lay-skin="primary" lay-filter="allChoose"></th>
+            <th>代理信息</th>
+            <th>资金</th>
+            <th>直属商户&间接商户</th>
+            <th>操作</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          {volist name="user_list" id="vo"}
+          <tr>
+            <td><input type="checkbox" name="ids[]" class="layui-checkbox checkbox-ids" value="{$vo['user_id']}" lay-skin="primary"></td>
+            <td class="font12">
+              <p class="ml10 fl"><strong class="mcolor">
+                {if condition="$vo['name']"}
+                {$vo['name']}
+                {else /}未认证{/if}
+              </strong>
+                <br>手机：{$vo['user_id']}</p>
+            </td>
+            <td class="font12">余额：{$vo['balance']}（元）<br>交易量：{$vo['integral']}（元）</td>
+            <td class="font12">直属商户：{$vo['underling']}<br>间接商户：{$vo['indirect']}</td>
+            <td class="font12"><a href="{:url('edit?user_id='.$vo['user_id'])}">签约</a></td>
+          </tr>
+          {/volist}
+          </tbody>
+        </table>
+        {$pages}
+      </div>
+    </form>
+
+
+
+
+    {include file="common/footer" /}
+

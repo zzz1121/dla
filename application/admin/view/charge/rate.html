@@ -1,0 +1,161 @@
+{include file="common/header" /}
+
+    <form class="layui-form layui-form-pane" action="{:url('charge/update')}" method="post" id="editForm">
+      <!--<div class="layui-form-item">-->
+        <!--<label class="layui-form-label">支付通道选择</label>-->
+        <!--<div class="layui-input-inline ">-->
+          <!--<select name="pay_prot_id" class="field-type" type="select"  lay-filter="SelectType">-->
+            <!--<option value="1" {eq name="$rate_data.pay_prot_id" value="1"}selected="selected"{/eq}>上福支付</option>-->
+            <!--<option value="2" {eq name="$rate_data.pay_prot_id" value="2"}selected="selected"{/eq}>汇享天成</option>-->
+          <!--</select>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">通道提供方</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title " name="rate_name" disabled
+                 value="{$rate_data['rate_name']}" lay-verify="required" autocomplete="off" placeholder="通道名称">
+        </div>
+        <div class="layui-form-mid layui-word-aux">通道提供方<br/> 通道提供方</div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">通道名称</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="pay_name"
+                 value="{$rate_data['pay_name']}" lay-verify="required" autocomplete="off" placeholder="通道名称">
+        </div>
+        <div class="layui-form-mid layui-word-aux">通道名称<br/> APP显示通道名称</div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">提现模式</label>
+        <div class="layui-input-inline ">
+          <select name="rate_type" class="field-type" type="select"  lay-filter="SelectType">
+            <option value="1" {eq name="$rate_data['rate_type']" value="D+0"}selected="selected"{/eq}>D+0</option>
+            <option value="2" {eq name="$rate_data['rate_type']" value="T+1"}selected="selected"{/eq}>T+1</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">平台成本</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="costing"
+                 value="{$rate_data['costing']}" lay-verify="required" autocomplete="off" placeholder="">
+        </div>
+        <div class="layui-form-mid layui-word-aux">平台的运营成本<br/>“0.003” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">平台费率</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="settle_rate"
+                 value="{$rate_data['settle_rate']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">平台提现费率<br/>"0.003” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">最低手续费</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="min_charge"
+                 value="{$rate_data['min_charge']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">订单手续费不足最低手续费的,将已最低手续费收取。单位:分</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">直属抽成</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="parent"
+                 value="{$rate_data['parent']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">“0.003” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">间接抽成</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="superior"
+                 value="{$rate_data['superior']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">间接代理订单抽成<br/>“0.003” 代表费率千分之3,不可输入整数</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">服务费</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="extra_rate"
+                 value="{$rate_data['extra_rate']}" lay-verify="required" autocomplete="off" placeholder="订单所需服务费用">
+        </div>
+        <div class="layui-form-mid layui-word-aux">订单所需服务费用<br/>输入小数为订单百分比收费,输入整数位按固定值收取,单位:分</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">服务费成本</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="extra_rate"
+                 value="{$rate_data['extra_rate_cost']}" lay-verify="required" autocomplete="off" placeholder="订单所需服务费用">
+        </div>
+        <div class="layui-form-mid layui-word-aux">订单所需服务费用<br/>输入小数为订单百分比收费,输入整数位按固定值收取,单位:分</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">最低限额</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="min_money"
+                 value="{$rate_data['min_money']}" lay-verify="required" autocomplete="off" placeholder="每笔订单的最低取现金额">
+        </div>
+        <div class="layui-form-mid layui-word-aux">最低取现金额<br/>每笔订单的最低取现金额，单位：元</div>
+      </div>
+      <div class="layui-form-item">
+      <label class="layui-form-label">最高限额</label>
+      <div class="layui-input-inline w300">
+        <input type="text" class="layui-input field-title" name="max_money"
+               value="{$rate_data['max_money']}" lay-verify="required" autocomplete="off" placeholder="每笔订单的最高取现金额">
+      </div>
+      <div class="layui-form-mid layui-word-aux">最高取现金额<br/>每笔订单的最高取现金额，单位：元</div>
+    </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">每日单卡取现限额</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="days_money"
+                 value="{$rate_data['days_money']}" lay-verify="required" autocomplete="off" placeholder="每日单卡取现限额">
+        </div>
+        <div class="layui-form-mid layui-word-aux">每日单卡取现限额<br/>每日单卡的最高取现金额，单位：元</div>
+      </div>
+
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">分润入账</label>
+        <div class="layui-input-inline w300">
+          <input type="text" class="layui-input field-title" name="period"
+                 value="{$rate_data['period']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">分润入账时间，单位：天</div>
+      </div>
+
+      <div class="layui-form-item">
+        <label class="layui-form-label">开启时间</label>
+        <div class="layui-input-inline w300">
+          <input type="time" class="layui-input field-title" name="start_time"
+                 value="{$rate_data['start_time']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">通道每日开启时间；单位：时</div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">关闭时间</label>
+        <div class="layui-input-inline w300">
+          <input type="time" class="layui-input field-title" name="end_time"
+                 value="{$rate_data['end_time']}" lay-verify="required" autocomplete="off" placeholder="请输入最低手续费">
+        </div>
+        <div class="layui-form-mid layui-word-aux">通道每日关闭时间；单位：时</div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <input type="hidden" class="field-id" name="pay_prot_id" value="{$rate_data['pay_prot_id']}">
+          <button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">提交</button>
+          <a href="{:url('index')}" class="layui-btn layui-btn-primary ml10"><i class="aicon ai-fanhui"></i>返回</a>
+        </div>
+      </div>
+    </form>
+  <script>
+  </script>
+
+{include file="common/footer" /}
+<!--<script src="__ADMIN_JS__/js/footer.js"></script>-->
