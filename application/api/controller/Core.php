@@ -504,7 +504,7 @@ class Core extends Controller
         }
         // ###文件处理
         // 创建对应的目录
-        $pic_path = 'public' . DS . 'uploads/'.$dir.'/'.date('Ymd',time()) . '/';
+        $pic_path = 'public' . DS . 'uploads/'.$dir.'/';
         !file_exists($pic_path) && mkdir($pic_path, 0777);
         if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $base64, $result)){
             $type = $result[2];
@@ -624,7 +624,7 @@ class Core extends Controller
             {
                 //找到文件存放的位置
 
-                $filepath = "./public/uploads/".$file_path."/".date('Ymd',time()).'/';
+                $filepath = "./public/uploads/".$file_path."/";
                 !file_exists($filepath) && mkdir($filepath, 0777);
 
                 $file_type=substr(strrchr($file['type'],'/'),1);

@@ -1,0 +1,5 @@
+
+2017--12-04 17:14:28{"reason":"\u56fe\u50cf\u672a\u8bc6\u522b\u5230\u76f8\u5173\u6570\u636e","result":"[]","error_code":400}
+2017--12-04 17:15:25{"reason":"\u8eab\u4efd\u8bc1\u6b63\u9762","result":{"name":"\u5f20\u826f\u94a6","nation":"\u6c49","id_number":"352228199604260517","cardtype":"positive","sex":"\u7537","birthday":"1996\u5e744\u670826\u65e5","address":"\u798f\u5efa\u7701\u5c4f\u5357\u53bf\u53cc\u6eaa\u9547\u5317\u675167\u53f7"},"error_code":200}
+2017--12-04 17:15:30{"status":"0","msg":"ok","result":{"idcard":"352228199604260517","realname":"\u5f20\u826f\u94a6","province":"\u798f\u5efa","city":"\u5b81\u5fb7","town":"\u5c4f\u5357\u53bf","sex":"\u7537","birth":"1996\u5e7404\u670826\u65e5","verifystatus":"0","verifymsg":"\u606d\u559c\u60a8\uff0c\u8eab\u4efd\u8bc1\u6821\u9a8c\u4e00\u81f4\uff01"}}
+2017--12-04 17:15:30{"idcard":"352228199604260517","realname":"\u5f20\u826f\u94a6","province":"\u798f\u5efa","city":"\u5b81\u5fb7","town":"\u5c4f\u5357\u53bf","sex":"\u7537","birth":"1996\u5e7404\u670826\u65e5","verifystatus":"","verifymsg":"\u606d\u559c\u60a8\uff0c\u8eab\u4efd\u8bc1\u6821\u9a8c\u4e00\u81f4\uff01"}

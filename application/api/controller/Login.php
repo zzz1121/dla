@@ -162,9 +162,9 @@ class Login extends Core
             return $this->returnMsg;
         }
         $this->online=$user;
-        if(strlen($user['name'])>6){
+        if(strlen($user['name'])>6 && !empty($user['name']) ){
             $user['name']=mb_substr($user['name'],0,1,'utf-8')."*".mb_substr($user['name'],-1,1,'utf-8');
-        }else{
+        }elseif(!empty($user['name'])){
             $user['name']="*".mb_substr($user['name'],-1,1,'utf-8');
         }
 
@@ -183,6 +183,7 @@ class Login extends Core
             'number'=>$user['number'],
             'is_merchant'=>1
         ];
+
         if($user_id=="17750775177"){
             $this->returnMsg['data']['is_merchant']=2;
         }

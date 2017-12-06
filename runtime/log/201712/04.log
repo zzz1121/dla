@@ -1,1369 +1,415 @@
 ---------------------------------------------------------------
-[ 2017-12-04T09:49:30+08:00 ] ::1 ::1 POST /
-[ error ] [0]variable type error： array
----------------------------------------------------------------
-[ 2017-12-04T09:49:58+08:00 ] ::1 ::1 POST /
-[ info ] dla.api.com/ [运行时间：0.502503s][吞吐率：1.99req/s] [内存消耗：2,161.90kb] [文件加载：48]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:15:30+08:00 ] 192.168.0.119 192.168.0.115 POST /?s=api/identity/check_identity
+[ info ] 192.168.0.119/?s=api/identity/check_identity [运行时间：0.493582s][吞吐率：2.03req/s] [内存消耗：3,453.60kb] [文件加载：56]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
-    0 => '',
-    1 => NULL,
+    0 => 'api',
+    1 => 'identity',
+    2 => 'check_identity',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.119',
+  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
+  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
+  'content-length' => '234',
+  'accept-encoding' => 'gzip',
+  'connection' => 'close',
+)
+[ info ] [ PARAM ] array (
+  'number' => '352228199604260517',
+  'phone' => '18649738701',
+  'name' => '张良钦',
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
+  'address' => '福建省屏南县双溪镇北村67号',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Identity->check_identity[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Identity.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-04T17:19:39+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg
+[ info ] 192.168.0.119/?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg [运行时间：0.488951s][吞吐率：2.05req/s] [内存消耗：1,687.40kb] [文件加载：40]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '.',
+    1 => 'public',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.119',
+  'accept' => 'image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+  'accept-language' => 'zh-cn',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202',
+)
+[ info ] [ PARAM ] array (
+  'temporary' => '9f462f3c5bb513ecbc57c6a139009e4a.jpeg',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-04T17:20:04+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg
+[ info ] 192.168.0.119/?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg [运行时间：0.469193s][吞吐率：2.13req/s] [内存消耗：1,687.40kb] [文件加载：40]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '.',
+    1 => 'public',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.119',
+  'accept' => 'image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+  'accept-language' => 'zh-cn',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202',
+)
+[ info ] [ PARAM ] array (
+  'temporary' => '9f462f3c5bb513ecbc57c6a139009e4a.jpeg',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-04T17:20:28+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg
+[ info ] 192.168.0.119/?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg [运行时间：0.437890s][吞吐率：2.28req/s] [内存消耗：1,687.40kb] [文件加载：40]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '.',
+    1 => 'public',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.119',
+  'accept' => 'image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+  'accept-language' => 'zh-cn',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202',
+)
+[ info ] [ PARAM ] array (
+  'temporary' => '9f462f3c5bb513ecbc57c6a139009e4a.jpeg',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-04T17:20:43+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg
+[ info ] 192.168.0.119/?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg [运行时间：0.441083s][吞吐率：2.27req/s] [内存消耗：1,687.40kb] [文件加载：40]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '.',
+    1 => 'public',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.119',
+  'accept' => 'image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+  'accept-language' => 'zh-cn',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202',
+)
+[ info ] [ PARAM ] array (
+  'temporary' => '9f462f3c5bb513ecbc57c6a139009e4a.jpeg',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-04T17:21:57+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg
+[ info ] 192.168.0.119/?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg [运行时间：0.479949s][吞吐率：2.08req/s] [内存消耗：1,687.40kb] [文件加载：40]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '.',
+    1 => 'public',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.119',
+  'accept' => 'image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+  'accept-language' => 'zh-cn',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202',
+)
+[ info ] [ PARAM ] array (
+  'temporary' => '9f462f3c5bb513ecbc57c6a139009e4a.jpeg',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-04T17:22:07+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg
+[ info ] 192.168.0.119/?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg [运行时间：0.437139s][吞吐率：2.29req/s] [内存消耗：1,687.40kb] [文件加载：40]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '.',
+    1 => 'public',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.119',
+  'accept' => 'image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+  'accept-language' => 'zh-cn',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202',
+)
+[ info ] [ PARAM ] array (
+  'temporary' => '9f462f3c5bb513ecbc57c6a139009e4a.jpeg',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-04T17:25:29+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=api/bankcard?card_type=CREDIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701
+[ info ] 192.168.0.119/?s=api/bankcard?card_type=CREDIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701 [运行时间：0.431068s][吞吐率：2.32req/s] [内存消耗：3,502.90kb] [文件加载：56]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'bankcard',
     2 => NULL,
   ),
 )
 [ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
+  'host' => '192.168.0.119',
+  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
   'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '3891bdb9-98f3-37dc-b194-6958a13d4f98',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
+  'accept-encoding' => 'gzip',
 )
 [ info ] [ PARAM ] array (
-  'phone' => '13850159108',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
+  'phone' => '18649738701',
 )
-[ info ] [ RUN ] app\admin\controller\Publics->index[ /Users/mr_z/work/哆啦A/dla/application/admin/controller/Publics.php ]
-[ info ] [ SESSION ] INIT array (
-  'id' => '',
-  'var_session_id' => '',
-  'prefix' => 'think',
-  'type' => '',
-  'auto_start' => true,
-)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
 [ info ] [ LOG ] INIT File
-[ error ] [0]variable type error： array[/Users/mr_z/work/哆啦A/dla/thinkphp/library/think/Response.php:318]
 ---------------------------------------------------------------
-[ 2017-12-04T09:50:48+08:00 ] ::1 ::1 POST /
-[ info ] dla.api.com/ [运行时间：0.541590s][吞吐率：1.85req/s] [内存消耗：1,787.08kb] [文件加载：41]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:25:32+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=api/bankcard?card_type=DEBIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701
+[ info ] 192.168.0.119/?s=api/bankcard?card_type=DEBIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701 [运行时间：0.275077s][吞吐率：3.64req/s] [内存消耗：3,502.90kb] [文件加载：56]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
-    0 => '',
-    1 => NULL,
+    0 => 'api',
+    1 => 'bankcard',
     2 => NULL,
   ),
 )
 [ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
+  'host' => '192.168.0.119',
+  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
   'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'dd5d4d68-f10b-ffab-a618-df47692a8572',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
+  'accept-encoding' => 'gzip',
 )
 [ info ] [ PARAM ] array (
-  'phone' => '13850159108',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
+  'phone' => '18649738701',
 )
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
 [ info ] [ LOG ] INIT File
 ---------------------------------------------------------------
-[ 2017-12-04T09:51:16+08:00 ] ::1 ::1 POST /
-[ info ] dla.api.com/ [运行时间：0.494233s][吞吐率：2.02req/s] [内存消耗：1,787.08kb] [文件加载：41]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:25:35+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=api/bankcard?card_type=CREDIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701
+[ info ] 192.168.0.119/?s=api/bankcard?card_type=CREDIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701 [运行时间：0.282053s][吞吐率：3.55req/s] [内存消耗：3,502.90kb] [文件加载：56]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
-    0 => '',
-    1 => NULL,
+    0 => 'api',
+    1 => 'bankcard',
     2 => NULL,
   ),
 )
 [ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
+  'host' => '192.168.0.119',
+  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
   'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '084532ea-4530-c2fa-74b1-d2a2629c7256',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
+  'accept-encoding' => 'gzip',
 )
 [ info ] [ PARAM ] array (
-  'phone' => '13850159108',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
+  'phone' => '18649738701',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-04T17:25:40+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg
+[ info ] 192.168.0.119/?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg [运行时间：0.440653s][吞吐率：2.27req/s] [内存消耗：1,687.40kb] [文件加载：40]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '.',
+    1 => 'public',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.119',
+  'accept' => 'image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+  'accept-language' => 'zh-cn',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202',
+)
+[ info ] [ PARAM ] array (
+  'temporary' => '9f462f3c5bb513ecbc57c6a139009e4a.jpeg',
 )
 [ info ] [ LOG ] INIT File
 ---------------------------------------------------------------
-[ 2017-12-04T09:51:49+08:00 ] ::1 ::1 POST /api/core
-[ info ] dla.api.com/api/core [运行时间：0.293468s][吞吐率：3.41req/s] [内存消耗：2,251.07kb] [文件加载：46]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:25:41+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=api/bankcard?card_type=DEBIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701
+[ info ] 192.168.0.119/?s=api/bankcard?card_type=DEBIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701 [运行时间：0.277922s][吞吐率：3.60req/s] [内存消耗：3,502.90kb] [文件加载：56]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
     0 => 'api',
-    1 => 'core',
+    1 => 'bankcard',
     2 => NULL,
   ),
 )
 [ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
+  'host' => '192.168.0.119',
+  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
   'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '11b57ed8-e23a-0a63-5b20-cb9067d82b40',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
+  'accept-encoding' => 'gzip',
 )
 [ info ] [ PARAM ] array (
-  'phone' => '13850159108',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Core->index[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Core.php ]
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T09:52:00+08:00 ] ::1 ::1 POST /api/reg/regsms
-[ info ] dla.api.com/api/reg/regsms [运行时间：0.514084s][吞吐率：1.95req/s] [内存消耗：2,365.63kb] [文件加载：49]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'regsms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '247e037b-e61e-834d-46b5-7102a27fbbaa',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '13850159108',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T09:52:25+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.382011s][吞吐率：2.62req/s] [内存消耗：3,479.68kb] [文件加载：55]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '3d87f0fc-a633-5a4d-4215-c0a6d9988f72',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
   'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
 )
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
 [ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
 [ info ] [ LOG ] INIT File
 ---------------------------------------------------------------
-[ 2017-12-04T09:52:47+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.587222s][吞吐率：1.70req/s] [内存消耗：3,523.56kb] [文件加载：58]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:25:44+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=api/bankcard?card_type=CREDIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701
+[ info ] 192.168.0.119/?s=api/bankcard?card_type=CREDIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701 [运行时间：0.277111s][吞吐率：3.61req/s] [内存消耗：3,502.90kb] [文件加载：56]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
     0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
+    1 => 'bankcard',
+    2 => NULL,
   ),
 )
 [ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
+  'host' => '192.168.0.119',
+  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
   'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '76d4ec70-4920-15b3-84f6-3ffde6f1da2c',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
+  'accept-encoding' => 'gzip',
 )
 [ info ] [ PARAM ] array (
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
   'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
 )
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
 [ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
 [ info ] [ LOG ] INIT File
-[ error ] [8]未定义变量: user_id[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:134]
 ---------------------------------------------------------------
-[ 2017-12-04T09:53:05+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.314622s][吞吐率：3.18req/s] [内存消耗：3,466.06kb] [文件加载：54]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:26:20+08:00 ] 127.0.0.1 127.0.0.1 POST /?s=api/bankcard
+[ info ] 127.0.0.1/?s=api/bankcard [运行时间：0.417358s][吞吐率：2.40req/s] [内存消耗：3,220.38kb] [文件加载：54]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
     0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'abe3f0dc-2247-7c79-21f9-aed4ade67155',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T09:53:21+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.304386s][吞吐率：3.29req/s] [内存消耗：3,471.12kb] [文件加载：55]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '74902dee-ec13-6fd2-adc0-4a01f43e75a7',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T10:00:27+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.624902s][吞吐率：1.60req/s] [内存消耗：3,522.65kb] [文件加载：57]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'b62fceb5-9c31-b08e-1900-b525a136715a',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Class 'think\sms_hy' not found[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:136]
----------------------------------------------------------------
-[ 2017-12-04T10:01:27+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.590621s][吞吐率：1.69req/s] [内存消耗：3,533.52kb] [文件加载：58]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '99a58461-c07c-39a7-f504-27b8ef617cff',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Class 'hywx_sms\sms_hy' not found[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:136]
----------------------------------------------------------------
-[ 2017-12-04T10:02:48+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.579453s][吞吐率：1.73req/s] [内存消耗：3,522.75kb] [文件加载：57]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'ab52b084-b530-2acc-6191-374da88dca8f',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Class 'app\api\controller\Sms_hy' not found[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:136]
----------------------------------------------------------------
-[ 2017-12-04T10:04:29+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.568129s][吞吐率：1.76req/s] [内存消耗：3,522.75kb] [文件加载：57]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'c3d577f1-f3b1-bb91-401d-86ce0a03d9ba',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Class 'app\api\controller\Sms_hy' not found[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:136]
----------------------------------------------------------------
-[ 2017-12-04T10:04:47+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.517660s][吞吐率：1.93req/s] [内存消耗：3,534.34kb] [文件加载：58]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '659ddc9d-77b9-c8e6-90a9-8c83a1e0c388',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Class 'hywxsms\Smshy' not found[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:136]
----------------------------------------------------------------
-[ 2017-12-04T10:06:32+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.610227s][吞吐率：1.64req/s] [内存消耗：3,542.88kb] [文件加载：59]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '239f0a94-f57c-fca9-8f5a-dee73bfb9aa3',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Class 'hywxsms\Smshy' not found[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:137]
----------------------------------------------------------------
-[ 2017-12-04T10:07:06+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.107728s][吞吐率：9.28req/s] [内存消耗：3,561.60kb] [文件加载：60]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '28c0f905-2946-04b5-65fe-cb47bbe528a0',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [64]Cannot declare class Smshy, because the name is already in use[/Users/mr_z/work/哆啦A/dla/extend/hywxsms/Smshy.php:8]
----------------------------------------------------------------
-[ 2017-12-04T10:07:33+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.478908s][吞吐率：2.09req/s] [内存消耗：3,531.51kb] [文件加载：58]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '5e9e45ca-2f6f-2835-942e-9fc96cdb3a3a',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Class 'hywxsms\Smshy' not found[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:137]
----------------------------------------------------------------
-[ 2017-12-04T10:07:41+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.106583s][吞吐率：9.38req/s] [内存消耗：3,561.60kb] [文件加载：60]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'f0cfabbb-7180-399c-5fe5-477de654911d',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [64]Cannot declare class Smshy, because the name is already in use[/Users/mr_z/work/哆啦A/dla/extend/hywxsms/Smshy.php:8]
----------------------------------------------------------------
-[ 2017-12-04T10:09:21+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.172664s][吞吐率：5.79req/s] [内存消耗：3,561.60kb] [文件加载：60]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '949d4343-de8a-8552-9ab4-6dd9ccc1b7d8',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [64]Cannot declare class Smshy, because the name is already in use[/Users/mr_z/work/哆啦A/dla/extend/hywxsms/Smshy.php:8]
----------------------------------------------------------------
-[ 2017-12-04T10:09:52+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.472523s][吞吐率：2.12req/s] [内存消耗：3,531.66kb] [文件加载：58]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '3eb499d5-0467-372e-45e2-8173f531bf7f',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Class 'app\api\controller\Smshywx' not found[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:137]
----------------------------------------------------------------
-[ 2017-12-04T10:10:24+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.563397s][吞吐率：1.77req/s] [内存消耗：3,531.67kb] [文件加载：58]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '21e42c3f-4b4f-e16d-0da1-caf832242c72',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Class 'app\api\controller\Smshywx' not found[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:137]
----------------------------------------------------------------
-[ 2017-12-04T10:11:36+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.584133s][吞吐率：1.71req/s] [内存消耗：3,531.67kb] [文件加载：58]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '70ea7640-3d62-cca9-7192-a1da6dfa230e',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Class 'app\api\controller\Smshywx' not found[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:137]
----------------------------------------------------------------
-[ 2017-12-04T10:11:53+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.594911s][吞吐率：1.68req/s] [内存消耗：3,531.67kb] [文件加载：58]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '81a68c7a-b404-26f8-533c-2e1d9bf03a6b',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Class 'app\api\controller\Smshywx' not found[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:136]
----------------------------------------------------------------
-[ 2017-12-04T10:12:18+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.584173s][吞吐率：1.71req/s] [内存消耗：3,480.40kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '42ab1006-81c7-d76e-5862-8e905c30cc26',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T10:12:42+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.523887s][吞吐率：1.91req/s] [内存消耗：3,531.56kb] [文件加载：58]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '401e3150-5b96-2090-18c0-4f31410ed5da',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Call to undefined method Smshywx::sms()[/Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php:137]
----------------------------------------------------------------
-[ 2017-12-04T10:12:58+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.520096s][吞吐率：1.92req/s] [内存消耗：3,532.79kb] [文件加载：59]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '82a6ed61-c76d-8632-89b1-815dde455e58',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [8]未定义变量: mobile_code[/Users/mr_z/work/哆啦A/dla/vendor/hywxsms/smshy.php:36]
----------------------------------------------------------------
-[ 2017-12-04T10:13:13+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：1.293949s][吞吐率：0.77req/s] [内存消耗：3,531.52kb] [文件加载：58]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'e7c16bab-20f7-8fe0-88b0-42f049083dbb',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
-[ error ] [0]致命错误: Call to undefined function xml_to_array()[/Users/mr_z/work/哆啦A/dla/vendor/hywxsms/smshy.php:27]
----------------------------------------------------------------
-[ 2017-12-04T10:13:47+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.485842s][吞吐率：2.06req/s] [内存消耗：3,480.28kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'c05189d8-82ae-9c28-0d2f-a165a5cc9a93',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T10:14:16+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：2.639465s][吞吐率：0.38req/s] [内存消耗：3,480.20kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '0887c81d-6807-8307-89ea-ec947891af22',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T10:20:45+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：1.033444s][吞吐率：0.97req/s] [内存消耗：3,483.16kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '969f65bb-41c3-d3ca-8a95-d231a231dbe8',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T10:21:12+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.616891s][吞吐率：1.62req/s] [内存消耗：3,483.13kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'e4241f99-0a8d-ef52-4607-c63773785d1f',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T10:21:51+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.688335s][吞吐率：1.45req/s] [内存消耗：3,429.91kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'f6b53e37-045c-e362-28d4-f464d5dbd317',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T10:22:14+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.242669s][吞吐率：4.12req/s] [内存消耗：2,321.10kb] [文件加载：47]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '97',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => '588cdaf9-63c2-e610-b98a-4708fe4999f2',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '186497387012',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T10:23:33+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.299321s][吞吐率：3.34req/s] [内存消耗：2,321.10kb] [文件加载：47]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '97',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'fee87258-e038-d12d-685a-721f62c01895',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '186497387012',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T10:23:37+08:00 ] ::1 ::1 POST /api/reg/reg_sms
-[ info ] dla.api.com/api/reg/reg_sms [运行时间：0.594183s][吞吐率：1.68req/s] [内存消耗：3,429.91kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => 'dla.api.com',
-  'connection' => 'keep-alive',
-  'content-length' => '96',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'cache-control' => 'no-cache',
-  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
-  'postman-token' => 'c1208c36-235d-9295-013d-75108abd4586',
-  'content-type' => 'application/x-www-form-urlencoded',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-  'cookie' => 'PHPSESSID=8585173f50524e66488a2d223d948942',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'token' => '62d3a3f4ad0ed4d322c22543b4c4306d',
-  'card_id' => '6225**********4974',
-  'money' => '100.33',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T11:56:04+08:00 ] 127.0.0.1 127.0.0.1 GET /
-[ info ] 127.0.0.1/ [运行时间：0.699703s][吞吐率：1.43req/s] [内存消耗：1,785.64kb] [文件加载：41]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => '',
-    1 => NULL,
+    1 => 'bankcard',
     2 => NULL,
   ),
 )
 [ info ] [ HEADER ] array (
   'host' => '127.0.0.1',
   'connection' => 'keep-alive',
-  'cache-control' => 'max-age=0',
+  'content-length' => '41036',
   'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'upgrade-insecure-requests' => '1',
-  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'cache-control' => 'no-cache',
+  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
+  'postman-token' => '94b8cb65-7450-61cb-7c5b-5515228ad872',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryBAFKemqWe2XCv1iu',
+  'accept' => '*/*',
   'accept-encoding' => 'gzip, deflate, br',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
 )
 [ info ] [ PARAM ] array (
+  'phone' => '18649738701',
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
 )
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
 [ info ] [ LOG ] INIT File
 ---------------------------------------------------------------
-[ 2017-12-04T11:56:17+08:00 ] 127.0.0.1 127.0.0.1 GET /core
-[ info ] 127.0.0.1/core [运行时间：0.449804s][吞吐率：2.22req/s] [内存消耗：1,686.20kb] [文件加载：40]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'core',
-    1 => NULL,
-    2 => NULL,
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '127.0.0.1',
-  'connection' => 'keep-alive',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'upgrade-insecure-requests' => '1',
-  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-  'accept-encoding' => 'gzip, deflate, br',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-)
-[ info ] [ PARAM ] array (
-)
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T11:56:24+08:00 ] 127.0.0.1 127.0.0.1 GET /api/core
-[ info ] 127.0.0.1/api/core [运行时间：0.311384s][吞吐率：3.21req/s] [内存消耗：2,252.91kb] [文件加载：46]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:26:54+08:00 ] 127.0.0.1 127.0.0.1 POST /?s=api/bankcard&phone=18649738701&token=665ac7c408058b55b2fde9c2ff66a298
+[ info ] 127.0.0.1/?s=api/bankcard&phone=18649738701&token=665ac7c408058b55b2fde9c2ff66a298 [运行时间：0.373664s][吞吐率：2.68req/s] [内存消耗：3,220.43kb] [文件加载：54]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
     0 => 'api',
-    1 => 'core',
+    1 => 'bankcard',
     2 => NULL,
   ),
 )
 [ info ] [ HEADER ] array (
   'host' => '127.0.0.1',
   'connection' => 'keep-alive',
+  'content-length' => '271',
   'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'upgrade-insecure-requests' => '1',
-  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'cache-control' => 'no-cache',
+  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
+  'postman-token' => 'fcc9d36b-c7f9-d7ad-5128-cfcad6df0007',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryRvvgdpmbB0XPcOjo',
+  'accept' => '*/*',
   'accept-encoding' => 'gzip, deflate, br',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
 )
 [ info ] [ PARAM ] array (
+  'phone' => '18649738701',
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
 )
-[ info ] [ RUN ] app\api\controller\Core->index[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Core.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
 [ info ] [ LOG ] INIT File
 ---------------------------------------------------------------
-[ 2017-12-04T11:56:46+08:00 ] 127.0.0.1 127.0.0.1 GET /
-[ info ] 127.0.0.1/ [运行时间：0.491343s][吞吐率：2.04req/s] [内存消耗：1,785.20kb] [文件加载：41]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:26:58+08:00 ] 127.0.0.1 127.0.0.1 GET /?s=api/bankcard&phone=18649738701&token=665ac7c408058b55b2fde9c2ff66a298
+[ info ] 127.0.0.1/?s=api/bankcard&phone=18649738701&token=665ac7c408058b55b2fde9c2ff66a298 [运行时间：0.333020s][吞吐率：3.00req/s] [内存消耗：3,504.09kb] [文件加载：56]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
-    0 => '',
-    1 => NULL,
+    0 => 'api',
+    1 => 'bankcard',
     2 => NULL,
   ),
 )
@@ -1372,725 +418,117 @@
   'connection' => 'keep-alive',
   'cache-control' => 'no-cache',
   'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'postman-token' => 'c57bb53d-5a72-9b88-fcd3-36b4178d1d94',
+  'postman-token' => '956bfb7b-abe2-0a49-8ef3-37dabeac3628',
   'accept' => '*/*',
   'accept-encoding' => 'gzip, deflate, br',
   'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
 )
 [ info ] [ PARAM ] array (
+  'phone' => '18649738701',
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
 )
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T11:56:52+08:00 ] 127.0.0.1 127.0.0.1 GET /api/core
-[ info ] 127.0.0.1/api/core [运行时间：0.248010s][吞吐率：4.03req/s] [内存消耗：2,252.92kb] [文件加载：46]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'core',
-    2 => NULL,
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '127.0.0.1',
-  'connection' => 'keep-alive',
-  'cache-control' => 'no-cache',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'postman-token' => '79534c2a-e29a-88e2-bbf3-a2c3a0ac82b9',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate, br',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-)
-[ info ] [ PARAM ] array (
-)
-[ info ] [ RUN ] app\api\controller\Core->index[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Core.php ]
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T12:03:43+08:00 ] 127.0.0.1 127.0.0.1 GET /api/res_sms
-[ info ] 127.0.0.1/api/res_sms [运行时间：0.487431s][吞吐率：2.05req/s] [内存消耗：1,788.16kb] [文件加载：41]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'res_sms',
-    2 => NULL,
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '127.0.0.1',
-  'connection' => 'keep-alive',
-  'cache-control' => 'no-cache',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'postman-token' => '539b42e7-81e9-443d-5808-cf7764534157',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate, br',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-)
-[ info ] [ PARAM ] array (
-)
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T12:03:54+08:00 ] 127.0.0.1 127.0.0.1 GET /api/reg/
-[ info ] 127.0.0.1/api/reg/ [运行时间：0.351009s][吞吐率：2.85req/s] [内存消耗：3,153.30kb] [文件加载：53]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => NULL,
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '127.0.0.1',
-  'connection' => 'keep-alive',
-  'cache-control' => 'no-cache',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'postman-token' => '8464f438-4da8-b3c4-0d77-d3385a26a65c',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate, br',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-)
-[ info ] [ PARAM ] array (
-)
-[ info ] [ RUN ] app\api\controller\Reg->index[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
 [ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
 [ info ] [ LOG ] INIT File
 ---------------------------------------------------------------
-[ 2017-12-04T12:57:19+08:00 ] 127.0.0.1 127.0.0.1 GET /api/reg/
-[ info ] 127.0.0.1/api/reg/ [运行时间：0.357334s][吞吐率：2.80req/s] [内存消耗：3,153.30kb] [文件加载：53]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:33:27+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg
+[ info ] 192.168.0.119/?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg [运行时间：0.484425s][吞吐率：2.06req/s] [内存消耗：1,687.40kb] [文件加载：40]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
-    0 => 'api',
-    1 => 'reg',
-    2 => NULL,
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '127.0.0.1',
-  'connection' => 'keep-alive',
-  'cache-control' => 'no-cache',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'postman-token' => 'c76f8f7c-caa4-78f4-f940-dd0220c3eada',
-  'accept' => '*/*',
-  'accept-encoding' => 'gzip, deflate, br',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
-)
-[ info ] [ PARAM ] array (
-)
-[ info ] [ RUN ] app\api\controller\Reg->index[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T12:57:47+08:00 ] 192.168.0.119 192.168.0.119 GET /api/reg/
-[ info ] 192.168.0.119/api/reg/ [运行时间：0.305982s][吞吐率：3.27req/s] [内存消耗：3,153.31kb] [文件加载：53]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => NULL,
+    0 => '.',
+    1 => 'public',
+    2 => 'uploads',
   ),
 )
 [ info ] [ HEADER ] array (
   'host' => '192.168.0.119',
+  'accept' => 'image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+  'accept-language' => 'zh-cn',
   'connection' => 'keep-alive',
-  'cache-control' => 'no-cache',
-  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
-  'postman-token' => 'b179e69c-78c9-5dd9-afb9-7bdb9f777203',
-  'accept' => '*/*',
   'accept-encoding' => 'gzip, deflate',
-  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202',
 )
 [ info ] [ PARAM ] array (
+  'temporary' => '9f462f3c5bb513ecbc57c6a139009e4a.jpeg',
 )
-[ info ] [ RUN ] app\api\controller\Reg->index[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
 [ info ] [ LOG ] INIT File
 ---------------------------------------------------------------
-[ 2017-12-04T12:58:16+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：1.150638s][吞吐率：0.87req/s] [内存消耗：3,479.30kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:34:05+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=api/bankcard?card_type=CREDIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701
+[ info ] 192.168.0.119/?s=api/bankcard?card_type=CREDIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701 [运行时间：0.385162s][吞吐率：2.60req/s] [内存消耗：3,502.90kb] [文件加载：56]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
     0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:49:12+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.605280s][吞吐率：1.65req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:50:05+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.616799s][吞吐率：1.62req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:53:07+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：1.110782s][吞吐率：0.90req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:53:57+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.589810s][吞吐率：1.70req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:54:56+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.481029s][吞吐率：2.08req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:56:02+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.803217s][吞吐率：1.24req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:56:03+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.908634s][吞吐率：1.10req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:56:06+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：2.401078s][吞吐率：0.42req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:56:06+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：1.331432s][吞吐率：0.75req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:56:06+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.470280s][吞吐率：2.13req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:56:07+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.503334s][吞吐率：1.99req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:56:10+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.655719s][吞吐率：1.53req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:56:11+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.422879s][吞吐率：2.36req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:56:15+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.561763s][吞吐率：1.78req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:56:16+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg/reg_sms
-[ info ] 192.168.0.119/api/reg/reg_sms [运行时间：0.834396s][吞吐率：1.20req/s] [内存消耗：3,479.35kb] [文件加载：56]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => 'reg_sms',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '17',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-)
-[ info ] [ RUN ] app\api\controller\Reg->reg_sms[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:58:11+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg
-[ info ] 192.168.0.119/api/reg [运行时间：0.354098s][吞吐率：2.82req/s] [内存消耗：3,151.77kb] [文件加载：53]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
+    1 => 'bankcard',
     2 => NULL,
   ),
 )
 [ info ] [ HEADER ] array (
   'host' => '192.168.0.119',
   'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '43',
+  'connection' => 'keep-alive',
   'accept-encoding' => 'gzip',
-  'connection' => 'close',
 )
 [ info ] [ PARAM ] array (
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
   'phone' => '18649738701',
-  'code' => '1234',
-  'password' => 'qwert.',
 )
-[ info ] [ RUN ] app\api\controller\Reg->index[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
 [ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
 [ info ] [ LOG ] INIT File
 ---------------------------------------------------------------
-[ 2017-12-04T13:58:27+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg
-[ info ] 192.168.0.119/api/reg [运行时间：0.248482s][吞吐率：4.02req/s] [内存消耗：3,151.77kb] [文件加载：53]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:34:07+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=api/bankcard?card_type=DEBIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701
+[ info ] 192.168.0.119/?s=api/bankcard?card_type=DEBIT&token=665ac7c408058b55b2fde9c2ff66a298&phone=18649738701 [运行时间：0.275442s][吞吐率：3.63req/s] [内存消耗：3,502.90kb] [文件加载：56]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
     0 => 'api',
-    1 => 'reg',
+    1 => 'bankcard',
     2 => NULL,
   ),
 )
 [ info ] [ HEADER ] array (
   'host' => '192.168.0.119',
   'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '43',
+  'connection' => 'keep-alive',
   'accept-encoding' => 'gzip',
-  'connection' => 'close',
 )
 [ info ] [ PARAM ] array (
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
   'phone' => '18649738701',
-  'code' => '1234',
-  'password' => 'qwert.',
 )
-[ info ] [ RUN ] app\api\controller\Reg->index[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
 [ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
 [ info ] [ LOG ] INIT File
 ---------------------------------------------------------------
-[ 2017-12-04T13:59:02+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg
-[ info ] 192.168.0.119/api/reg [运行时间：0.413057s][吞吐率：2.42req/s] [内存消耗：3,473.14kb] [文件加载：55]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
+[ 2017-12-04T17:37:40+08:00 ] 192.168.0.119 192.168.0.115 GET /?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg
+[ info ] 192.168.0.119/?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg [运行时间：0.485013s][吞吐率：2.06req/s] [内存消耗：1,687.40kb] [文件加载：40]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
-    0 => 'api',
-    1 => 'reg',
-    2 => NULL,
+    0 => '.',
+    1 => 'public',
+    2 => 'uploads',
   ),
 )
 [ info ] [ HEADER ] array (
   'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '58',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
+  'accept' => 'image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+  'accept-language' => 'zh-cn',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202',
 )
 [ info ] [ PARAM ] array (
-  'code' => '0774',
-  'phone' => '18649738701',
-  'password' => 'qwert.',
-  'recommond' => '0774',
+  'temporary' => '9f462f3c5bb513ecbc57c6a139009e4a.jpeg',
 )
-[ info ] [ RUN ] app\api\controller\Reg->index[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:59:11+08:00 ] 192.168.0.119 192.168.0.115 POST /api/reg
-[ info ] 192.168.0.119/api/reg [运行时间：0.271831s][吞吐率：3.68req/s] [内存消耗：3,417.06kb] [文件加载：55]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'reg',
-    2 => NULL,
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '43',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'code' => '0774',
-  'password' => 'qwert.',
-)
-[ info ] [ RUN ] app\api\controller\Reg->index[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Reg.php ]
-[ info ] [ DB ] INIT mysql
-[ info ] [ LOG ] INIT File
----------------------------------------------------------------
-[ 2017-12-04T13:59:19+08:00 ] 192.168.0.119 192.168.0.115 POST /api/login/check
-[ info ] 192.168.0.119/api/login/check [运行时间：0.355239s][吞吐率：2.82req/s] [内存消耗：3,409.61kb] [文件加载：55]
-[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/thinkphp/lang/zh-cn.php
-[ info ] [ ROUTE ] array (
-  'type' => 'module',
-  'module' => 
-  array (
-    0 => 'api',
-    1 => 'login',
-    2 => 'check',
-  ),
-)
-[ info ] [ HEADER ] array (
-  'host' => '192.168.0.119',
-  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
-  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
-  'content-length' => '33',
-  'accept-encoding' => 'gzip',
-  'connection' => 'close',
-)
-[ info ] [ PARAM ] array (
-  'phone' => '18649738701',
-  'password' => 'qwert.',
-)
-[ info ] [ RUN ] app\api\controller\Login->check[ /Users/mr_z/work/哆啦A/dla/application/api/controller/Login.php ]
-[ info ] [ DB ] INIT mysql
 [ info ] [ LOG ] INIT File

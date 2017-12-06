@@ -7,7 +7,7 @@
 
 namespace app\api\controller;
 use think\Db;
-class Online extends Index
+class Online extends Core
 {
 //   protected $sbt_url="http://testapi.shangfudata.com";
    protected $sbt_url;
