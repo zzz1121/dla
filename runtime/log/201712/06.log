@@ -82,3 +82,223 @@
 )
 [ info ] [ RUN ] app\api\controller\Core->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Core.php ]
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-06T11:49:26+08:00 ] 127.0.0.1 127.0.0.1 GET /?s=api/bankcard&phone=18649738701&token=665ac7c408058b55b2fde9c2ff66a298
+[ info ] 127.0.0.1/?s=api/bankcard&phone=18649738701&token=665ac7c408058b55b2fde9c2ff66a298 [运行时间：0.660807s][吞吐率：1.51req/s] [内存消耗：3,084.11kb] [文件加载：51]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'bankcard',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'no-cache',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'postman-token' => 'f2a6a6a9-205f-e070-0ae9-be48d4e18834',
+  'accept' => '*/*',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18649738701',
+  'token' => '665ac7c408058b55b2fde9c2ff66a298',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-06T11:50:23+08:00 ] 127.0.0.1 127.0.0.1 POST /?s=api/login/check
+[ info ] 127.0.0.1/?s=api/login/check [运行时间：0.782640s][吞吐率：1.28req/s] [内存消耗：3,415.73kb] [文件加载：55]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'content-length' => '248',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'cache-control' => 'no-cache',
+  'origin' => 'chrome-extension://glllcdkbcifcidcmfgaabegmhcaicmle',
+  'postman-token' => '6e557bcf-e556-7640-c3a0-7016c6da8b37',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryNWRf1jilwEEJvCYg',
+  'accept' => '*/*',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18649738701',
+  'password' => 'qwert.',
+)
+[ info ] [ RUN ] app\api\controller\Login->check[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-06T11:51:30+08:00 ] 192.168.0.116 192.168.0.113 POST /?s=api/login/check
+[ info ] 192.168.0.116/?s=api/login/check [运行时间：0.930842s][吞吐率：1.07req/s] [内存消耗：3,411.84kb] [文件加载：55]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.116',
+  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
+  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
+  'content-length' => '33',
+  'accept-encoding' => 'gzip',
+  'connection' => 'close',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18649738701',
+  'password' => 'qwert.',
+)
+[ info ] [ RUN ] app\api\controller\Login->check[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-06T11:51:56+08:00 ] 192.168.0.116 192.168.0.113 POST /?s=api/login/check
+[ info ] 192.168.0.116/?s=api/login/check [运行时间：0.797052s][吞吐率：1.25req/s] [内存消耗：3,411.84kb] [文件加载：55]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'login',
+    2 => 'check',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.116',
+  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
+  'content-type' => 'application/x-www-form-urlencoded; charset=utf-8',
+  'content-length' => '33',
+  'accept-encoding' => 'gzip',
+  'connection' => 'close',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18649738701',
+  'password' => 'qwert.',
+)
+[ info ] [ RUN ] app\api\controller\Login->check[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-06T11:52:07+08:00 ] 192.168.0.116 192.168.0.113 GET /?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg
+[ info ] 192.168.0.116/?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg [运行时间：0.506396s][吞吐率：1.97req/s] [内存消耗：1,687.40kb] [文件加载：40]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '.',
+    1 => 'public',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.116',
+  'accept' => 'image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+  'accept-language' => 'zh-cn',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202',
+)
+[ info ] [ PARAM ] array (
+  'temporary' => '9f462f3c5bb513ecbc57c6a139009e4a.jpeg',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-06T11:52:29+08:00 ] 192.168.0.116 192.168.0.113 GET /?s=api/bankcard?card_type=CREDIT&token=0ab2a3b552582b1292af6a253f9c1046&phone=18649738701
+[ info ] 192.168.0.116/?s=api/bankcard?card_type=CREDIT&token=0ab2a3b552582b1292af6a253f9c1046&phone=18649738701 [运行时间：1.062208s][吞吐率：0.94req/s] [内存消耗：3,502.90kb] [文件加载：56]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'bankcard',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.116',
+  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip',
+)
+[ info ] [ PARAM ] array (
+  'token' => '0ab2a3b552582b1292af6a253f9c1046',
+  'phone' => '18649738701',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-06T11:53:03+08:00 ] 192.168.0.116 192.168.0.113 GET /?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg
+[ info ] 192.168.0.116/?s=./public/uploads/temporary/9f462f3c5bb513ecbc57c6a139009e4a.jpeg [运行时间：0.454220s][吞吐率：2.20req/s] [内存消耗：1,687.40kb] [文件加载：40]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '.',
+    1 => 'public',
+    2 => 'uploads',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.116',
+  'accept' => 'image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5',
+  'accept-language' => 'zh-cn',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_1_2 like Mac OS X) AppleWebKit/604.3.5 (KHTML, like Gecko) Mobile/15B202',
+)
+[ info ] [ PARAM ] array (
+  'temporary' => '9f462f3c5bb513ecbc57c6a139009e4a.jpeg',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-06T11:53:06+08:00 ] 192.168.0.116 192.168.0.113 GET /?s=api/bankcard?card_type=CREDIT&token=0ab2a3b552582b1292af6a253f9c1046&phone=18649738701
+[ info ] 192.168.0.116/?s=api/bankcard?card_type=CREDIT&token=0ab2a3b552582b1292af6a253f9c1046&phone=18649738701 [运行时间：1.119008s][吞吐率：0.89req/s] [内存消耗：3,502.90kb] [文件加载：56]
+[ info ] [ LANG ] /Users/mr_z/work/哆啦A/dla/dla/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'bankcard',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '192.168.0.116',
+  'user-agent' => '1.2.56 (iPhone; iOS 11.1.2; zh_CN)',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip',
+)
+[ info ] [ PARAM ] array (
+  'token' => '0ab2a3b552582b1292af6a253f9c1046',
+  'phone' => '18649738701',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\api\controller\Bankcard->index[ /Users/mr_z/work/哆啦A/dla/dla/application/api/controller/Bankcard.php ]
+[ info ] [ LOG ] INIT File
